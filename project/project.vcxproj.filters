@@ -74,6 +74,9 @@
     <ClCompile Include="Source\SoundManager.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="Source\input\inputManager.cpp">
+      <Filter>common\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -168,6 +171,9 @@
     <ClInclude Include="Source\StateBase.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="Source\input\inputManager.h">
+      <Filter>common\input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -190,6 +196,9 @@
     </Filter>
     <Filter Include="common\Object">
       <UniqueIdentifier>{165e4fd3-6b62-4ee3-94bd-da25920c3cb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\input">
+      <UniqueIdentifier>{0470fecd-442c-43f2-8233-4fc9143b5ef1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

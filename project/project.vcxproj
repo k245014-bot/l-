@@ -159,6 +159,7 @@
     <ClInclude Include="Source\collision.h" />
     <ClInclude Include="Source\csvReader.h" />
     <ClInclude Include="Source\imageSynthesis.h" />
+    <ClInclude Include="Source\input\inputManager.h" />
     <ClInclude Include="Source\object2D.h" />
     <ClInclude Include="Source\object3D.h" />
     <ClInclude Include="Source\objectBase.h" />
@@ -189,6 +190,7 @@
     <ClCompile Include="Source\collision.cpp" />
     <ClCompile Include="Source\csvReader.cpp" />
     <ClCompile Include="Source\imageSynthesis.cpp" />
+    <ClCompile Include="Source\input\inputManager.cpp" />
     <ClCompile Include="Source\object2D.cpp" />
     <ClCompile Include="Source\object3D.cpp" />
     <ClCompile Include="Source\objectBase.cpp" />

@@ -3,8 +3,8 @@
 
 BootScene::BootScene()
 {
-	SoundManager* sound = new SoundManager();
-	sound->DontDestroyOnSceneChange();
+	/*SoundManager* sound = new SoundManager();
+	sound->DontDestroyOnSceneChange();*/
 }
 
 BootScene::~BootScene()

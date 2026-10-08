@@ -435,6 +435,6 @@ OrderBellD:
     ret
 
 
-SlotLottery ENDP
+FlagLottery ENDP
 
 END

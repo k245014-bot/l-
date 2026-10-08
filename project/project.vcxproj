@@ -163,6 +163,8 @@
     <ClInclude Include="Source\main\creditMedal.h" />
     <ClInclude Include="Source\main\flagLottery.h" />
     <ClInclude Include="Source\main\mainControl.h" />
+    <ClInclude Include="Source\main\reel.h" />
+    <ClInclude Include="Source\main\reelTableBase.h" />
     <ClInclude Include="Source\object2D.h" />
     <ClInclude Include="Source\object3D.h" />
     <ClInclude Include="Source\objectBase.h" />
@@ -197,6 +199,8 @@
     <ClCompile Include="Source\main\creditMedal.cpp" />
     <ClCompile Include="Source\main\flagLottery.cpp" />
     <ClCompile Include="Source\main\mainControl.cpp" />
+    <ClCompile Include="Source\main\reel.cpp" />
+    <ClCompile Include="Source\main\reelTableBase.cpp" />
     <ClCompile Include="Source\object2D.cpp" />
     <ClCompile Include="Source\object3D.cpp" />
     <ClCompile Include="Source\objectBase.cpp" />

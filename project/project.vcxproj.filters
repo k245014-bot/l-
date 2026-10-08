@@ -86,6 +86,12 @@
     <ClCompile Include="Source\main\flagLottery.cpp">
       <Filter>PlayScene\main</Filter>
     </ClCompile>
+    <ClCompile Include="Source\main\reel.cpp">
+      <Filter>PlayScene\main</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main\reelTableBase.cpp">
+      <Filter>PlayScene\main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -190,6 +196,12 @@
       <Filter>PlayScene\main</Filter>
     </ClInclude>
     <ClInclude Include="Source\main\flagLottery.h">
+      <Filter>PlayScene\main</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\main\reel.h">
+      <Filter>PlayScene\main</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\main\reelTableBase.h">
       <Filter>PlayScene\main</Filter>
     </ClInclude>
   </ItemGroup>

@@ -14,4 +14,6 @@ public:
 private:
 
 	int hImage;
+	//➑̂̉摜
+	int housingImage;
 };

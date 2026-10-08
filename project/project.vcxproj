@@ -156,6 +156,7 @@
     <ClInclude Include="Library\SceneManager.h" />
     <ClInclude Include="Library\Time.h" />
     <ClInclude Include="Source\BootScene.h" />
+    <ClInclude Include="Source\Camera\Camaer.h" />
     <ClInclude Include="Source\collision.h" />
     <ClInclude Include="Source\csvReader.h" />
     <ClInclude Include="Source\imageSynthesis.h" />
@@ -172,6 +173,8 @@
     <ClInclude Include="Source\SceneFactory.h" />
     <ClInclude Include="Source\SoundManager.h" />
     <ClInclude Include="Source\StateBase.h" />
+    <ClInclude Include="Source\Sub\SubA\SubAManager.h" />
+    <ClInclude Include="Source\Sub\SubB\SubBManager.h" />
     <ClInclude Include="Source\TitleScene.h" />
     <ClInclude Include="Source\Transform.h" />
   </ItemGroup>
@@ -190,6 +193,7 @@
     <ClCompile Include="Library\SceneManager.cpp" />
     <ClCompile Include="Library\Time.cpp" />
     <ClCompile Include="Source\BootScene.cpp" />
+    <ClCompile Include="Source\Camera\Camaer.cpp" />
     <ClCompile Include="Source\collision.cpp" />
     <ClCompile Include="Source\csvReader.cpp" />
     <ClCompile Include="Source\imageSynthesis.cpp" />
@@ -203,6 +207,8 @@
     <ClCompile Include="Source\PlayScene.cpp" />
     <ClCompile Include="Source\SceneFactory.cpp" />
     <ClCompile Include="Source\SoundManager.cpp" />
+    <ClCompile Include="Source\Sub\SubA\SubAManager.cpp" />
+    <ClCompile Include="Source\Sub\SubB\SubBManager.cpp" />
     <ClCompile Include="Source\TitleScene.cpp" />
     <ClCompile Include="Source\Transform.cpp" />
   </ItemGroup>

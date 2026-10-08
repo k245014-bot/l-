@@ -1,8 +1,8 @@
 #include "PlayScene.h"
 
-
 PlayScene::PlayScene()
 {
+	housingImage = LoadGraph("data/texture/sammy_ver4.0.png");
 }
 
 PlayScene::~PlayScene()
@@ -20,5 +20,5 @@ void PlayScene::Draw()
 {
 	DrawString(0, 0, "PLAY SCENE", GetColor(255, 255, 255));
 	DrawString(100, 400, "Push [T]Key To Title", GetColor(255, 255, 255));
-
+	DrawGraph(0, 0, housingImage, true);
 }

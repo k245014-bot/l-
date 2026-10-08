@@ -86,6 +86,18 @@
     <ClCompile Include="Source\main\flagLottery.cpp">
       <Filter>PlayScene\main</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Sub\SubA\SubAManager.cpp">
+      <Filter>PlayScene\Sub\SubA</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sub\SubB\SubBManager.cpp">
+      <Filter>PlayScene\Sub\SubB</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera\Camera.cpp">
+      <Filter>PlayScene\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mao\Mao.cpp">
+      <Filter>PlayScene\Mao</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -192,6 +204,18 @@
     <ClInclude Include="Source\main\flagLottery.h">
       <Filter>PlayScene\main</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Sub\SubA\SubAManager.h">
+      <Filter>PlayScene\Sub\SubA</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Sub\SubB\SubBManager.h">
+      <Filter>PlayScene\Sub\SubB</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera\Camera.h">
+      <Filter>PlayScene\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mao\Mao.h">
+      <Filter>PlayScene\Mao</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -220,6 +244,21 @@
     </Filter>
     <Filter Include="PlayScene\main">
       <UniqueIdentifier>{eed44056-0fdf-4cc8-9599-922850c43d4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Sub">
+      <UniqueIdentifier>{edadb6a5-b0fa-4b30-a401-3031cdae70f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Sub\SubA">
+      <UniqueIdentifier>{bca781ea-72fb-4b3d-a91c-9858e9361fe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Sub\SubB">
+      <UniqueIdentifier>{5273dbc5-6913-48be-a864-689965642e45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Camera">
+      <UniqueIdentifier>{3fcd2b79-58fb-444f-9013-1aaee9faeb03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Mao">
+      <UniqueIdentifier>{76b1071b-13d2-4a62-bfe6-f693d969db5d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

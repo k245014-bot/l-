@@ -1,0 +1,18 @@
+メインコントロールで、ブロックのように分けて各制御を管理する
+
+[MainGameManager] （全体進行管理・ステート制御）
+  ├── [CreditManager] （クレジット・枚数管理）
+  ├── [InputManager] （入力管理）
+  │     ├── [LeverInput] （レバー入力・ウェイト管理）
+  │     └── [StopButtonInput] （ストップボタン入力・順序判定）
+  ├── [RandomGenerator] （乱数生成）
+  ├── [LotteryEvaluator] （小役・フラグ抽選）
+  ├── [ReelController] （制御テーブル参照・すべりコマ数算出）
+  │     └── [Reel] (×3) （各胴の図柄配列・現在位置保持）
+  ├── [PaylineEvaluator] （有効ライン判定・払出判定）
+  └── [SubBoardCommunicator] （サブ基板への送信コマンド生成・出力）
+
+SubBoardCommunicator
+これ以外を、他のクラスでやり取り出来なくしたい。
+メイン→サブ　　これはあり
+　サブ→メイン　これはなし

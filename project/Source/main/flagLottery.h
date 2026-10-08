@@ -88,6 +88,7 @@ private:
 	};
 
 
+
 	int hit, prevHit;
 
 	float mainRand;

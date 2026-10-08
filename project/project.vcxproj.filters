@@ -222,4 +222,9 @@
       <UniqueIdentifier>{eed44056-0fdf-4cc8-9599-922850c43d4f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <MASM Include="Source\main\flagLottery.asm">
+      <Filter>PlayScene\main</Filter>
+    </MASM>
+  </ItemGroup>
 </Project>

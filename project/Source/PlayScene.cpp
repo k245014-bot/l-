@@ -8,7 +8,7 @@ PlayScene::PlayScene()
 	housingImage = LoadGraph("data/texture/sammy_ver4.0.png");
 	new SubAManager;
 
-	flag = new FlagLottery2;
+	/*flag = new FlagLottery2;*/
 
 	num = -1;
 	hImage = 0;
@@ -25,7 +25,7 @@ void PlayScene::Update()
 		SceneManager::ChangeScene("TITLE");
 	}
 
-	if (CheckHitKey(KEY_INPUT_SPACE))
+	/*if (CheckHitKey(KEY_INPUT_SPACE))
 	{
 		flag->SetRand();
 		num = flag->GetSymbol();
@@ -34,7 +34,7 @@ void PlayScene::Update()
 	if (CheckHitKey(KEY_INPUT_1))
 	{
 		flag->Reset();
-	}
+	}*/
 }
 
 void PlayScene::Draw()

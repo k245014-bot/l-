@@ -1,5 +1,5 @@
 #pragma once
-#include "../object3D.h"
+#include "../../object3D.h"
 
 class Mao :Object3D
 {

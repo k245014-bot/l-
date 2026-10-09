@@ -1,6 +1,6 @@
 #include "SubBManager.h"
 #include "../../Camera/Camera.h"
-#include "../../Mao/Mao.h"
+#include "../../Character/Mao/Mao.h"
 
 SubBManager::SubBManager()
 {

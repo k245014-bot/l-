@@ -101,8 +101,8 @@
     <ClCompile Include="Source\Sub\SubB\SubBManager.cpp">
       <Filter>PlayScene\Sub\SubB</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mao\Mao.cpp">
-      <Filter>PlayScene\Mao</Filter>
+    <ClCompile Include="Source\Character\Mao\Mao.cpp">
+      <Filter>PlayScene\Character\Mao</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -226,7 +226,7 @@
       <Filter>PlayScene\Sub\SubB</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mao\Mao.h">
-      <Filter>PlayScene\Mao</Filter>
+      <Filter>PlayScene\Character\Mao</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -269,7 +269,10 @@
     <Filter Include="PlayScene\Sub\SubB">
       <UniqueIdentifier>{af4ed6c3-e1cd-4223-8f05-532c2955298d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PlayScene\Mao">
+    <Filter Include="PlayScene\Character">
+      <UniqueIdentifier>{871ac396-d151-4180-bc83-81c30230da80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Character\Mao">
       <UniqueIdentifier>{a1f74c61-15e5-439e-ab6a-56393e93b1e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

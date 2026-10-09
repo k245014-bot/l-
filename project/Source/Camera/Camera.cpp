@@ -1,5 +1,5 @@
 #include "Camera.h"
-#include "../Mao/Mao.h"
+#include "../Character/Mao/Mao.h"
 
 Camera::Camera()
 {

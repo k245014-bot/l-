@@ -198,6 +198,7 @@
     <ClCompile Include="Library\Time.cpp" />
     <ClCompile Include="Source\BootScene.cpp" />
     <ClCompile Include="Source\Camera\Camera.cpp" />
+    <ClCompile Include="Source\Character\Mao\Mao.cpp" />
     <ClCompile Include="Source\collision.cpp" />
     <ClCompile Include="Source\csvReader.cpp" />
     <ClCompile Include="Source\imageSynthesis.cpp" />
@@ -207,7 +208,6 @@
     <ClCompile Include="Source\main\mainControl.cpp" />
     <ClCompile Include="Source\main\reel.cpp" />
     <ClCompile Include="Source\main\reelTableBase.cpp" />
-    <ClCompile Include="Source\Mao\Mao.cpp" />
     <ClCompile Include="Source\object2D.cpp" />
     <ClCompile Include="Source\object3D.cpp" />
     <ClCompile Include="Source\objectBase.cpp" />

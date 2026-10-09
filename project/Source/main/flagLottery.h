@@ -27,11 +27,11 @@ namespace
 
 class Random;
 
-class FlagLottery :public ObjectBase
+class FlagLottery2 :public ObjectBase
 {
 public:
-	FlagLottery();
-	~FlagLottery();
+	FlagLottery2();
+	~FlagLottery2();
 	void Update()override;
 	void Draw()override {};
 

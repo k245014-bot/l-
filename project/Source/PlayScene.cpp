@@ -7,15 +7,16 @@ PlayScene::PlayScene()
 {
 	housingImage = LoadGraph("data/texture/sammy_ver4.0.png");
 	new SubAManager;
-	flag = new FlagLottery();
+
+	flag = new FlagLottery2;
+
 	num = -1;
-	new SubAManager;
 	hImage = 0;
 }
 
 PlayScene::~PlayScene()
 {
-	delete flag;
+	//delete flag;
 }
 
 void PlayScene::Update()

@@ -5,7 +5,7 @@
 /// ゲームプレイのシーンを制御する
 /// </summary>
 
-class  FlagLottery;
+class  FlagLottery2;
 
 class PlayScene : public SceneBase
 {
@@ -16,7 +16,7 @@ public:
 	void Draw() override;
 private:
 
-	FlagLottery* flag;
+	FlagLottery2* flag;
 
 	int hImage;
 	//筐体の画像

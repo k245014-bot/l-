@@ -104,6 +104,9 @@
     <ClCompile Include="Source\Character\Mao\Mao.cpp">
       <Filter>PlayScene\Character\Mao</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Character\CharacterBase.cpp">
+      <Filter>PlayScene\Character</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -225,7 +228,10 @@
     <ClInclude Include="Source\Sub\SubB\SubBManager.h">
       <Filter>PlayScene\Sub\SubB</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mao\Mao.h">
+    <ClInclude Include="Source\Character\CharacterBase.h">
+      <Filter>PlayScene\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Character\Mao\Mao.h">
       <Filter>PlayScene\Character\Mao</Filter>
     </ClInclude>
   </ItemGroup>

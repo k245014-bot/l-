@@ -1,7 +1,7 @@
 #pragma once
-#include "../../object3D.h"
+#include "../CharacterBase.h"
 
-class Mao :Object3D
+class Mao : public CharacterBase
 {
 public:
 	Mao();
@@ -10,6 +10,5 @@ public:
 	void Update()override;
 	void Draw()override;
 
-	const VECTOR3 GetPositon() { return data.position; }
 private:
 };

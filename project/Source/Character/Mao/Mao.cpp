@@ -16,6 +16,5 @@ void Mao::Update()
 
 void Mao::Draw()
 {
-	MV1SetMatrix(hModel, Matrix());
-	MV1DrawModel(hModel);
+	CharacterBase::Draw();
 }

@@ -32,8 +32,6 @@ protected:
 	Transform data;
 	VECTOR3 velocity;
 	
-	
-
 };
 
 

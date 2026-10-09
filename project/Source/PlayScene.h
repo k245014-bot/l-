@@ -19,5 +19,8 @@ private:
 	FlagLottery* flag;
 
 	int hImage;
+	//➑̂̉摜
+	int housingImage;
 	int num;
+
 };

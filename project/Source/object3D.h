@@ -10,6 +10,7 @@ public:
 	virtual void Update()override {};
 	virtual void Draw()override;
 
+	void ObjectDraw();
 	//ÉQÉbÉ^Å[
 
 	inline const Transform& GetPosition() { return data; }

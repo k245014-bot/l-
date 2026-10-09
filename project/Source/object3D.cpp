@@ -16,6 +16,15 @@ Object3D::~Object3D()
 
 void Object3D::Draw()
 {
+	/*if (hModel > 0)
+	{
+		MV1SetMatrix(hModel, Matrix());
+		MV1DrawModel(hModel);
+	}*/
+}
+
+void Object3D::ObjectDraw()
+{
 	if (hModel > 0)
 	{
 		MV1SetMatrix(hModel, Matrix());

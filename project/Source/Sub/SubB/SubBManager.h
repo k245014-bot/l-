@@ -18,4 +18,7 @@ private:
 	void CameraSet();
 
 	int m_3DTarget;
+
+	//➑̂̉摜
+	int housingImage;
 };

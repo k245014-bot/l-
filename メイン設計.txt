@@ -6,11 +6,12 @@
   │     ├── [LeverInput] （レバー入力・ウェイト管理）
   │     └── [StopButtonInput] （ストップボタン入力・順序判定）
   ├── [RandomGenerator] （乱数生成）
-  ├── [LotteryEvaluator] （小役・フラグ抽選）
-  ├── [ReelController] （制御テーブル参照・すべりコマ数算出）
-  │     └── [Reel] (×3) （各胴の図柄配列・現在位置保持）
-  ├── [PaylineEvaluator] （有効ライン判定・払出判定）
-  └── [SubBoardCommunicator] （サブ基板への送信コマンド生成・出力）
+  ├── [LotteryEvaluator] （小役・フラグ抽選）[アセンブラ]
+  ├── [GameStateManager]  (内部状態・モード移行)「c++」
+  ├── [ReelController] （制御テーブル参照・すべりコマ数算出）[c++]
+  │     └── [Reel] (×3) （各胴の図柄配列・現在位置保持）[c++]
+  ├── [PaylineEvaluator] （有効ライン判定・払出判定）「c++」
+  └── [SubBoardCommunicator] （サブ基板への送信コマンド生成・出力）「アセンブラ」
 
 SubBoardCommunicator
 これ以外を、他のクラスでやり取り出来なくしたい。

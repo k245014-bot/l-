@@ -221,9 +221,6 @@
     <ClCompile Include="Source\TitleScene.cpp" />
     <ClCompile Include="Source\Transform.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <MASM Include="Source\main\flagLottery.asm" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />

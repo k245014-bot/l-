@@ -1,6 +1,6 @@
 #include "flagLottery.h"
 
-FlagLottery2::FlagLottery2()
+FlagLottery::FlagLottery()
 {
 	
 	//強チェリーAの乱数
@@ -60,16 +60,16 @@ FlagLottery2::FlagLottery2()
 	hitSymbol.emplace(Rand_ID::R_CHANCE_REPLAY, ID::CHANCE_REPLAY);
 }
 
-FlagLottery2::~FlagLottery2()
+FlagLottery::~FlagLottery()
 {
 	delete rand;
 }
 
-void FlagLottery2::Update()
+void FlagLottery::Update()
 {
 }
 
-void FlagLottery2::SetRand()
+void FlagLottery::SetRand()
 {
 	//乱数の抽選
 	mainRand = rand->Input(0, MAX_RAND);
@@ -89,26 +89,26 @@ void FlagLottery2::SetRand()
 
 }
 
-void FlagLottery2::SymbolReset()
+void FlagLottery::SymbolReset()
 {
 	prevHit = hit;
 	hit = 0;
 	ratio = 0;
 }
 
-void FlagLottery2::Reset()
+void FlagLottery::Reset()
 {
 	hit = 0;
 	ratio = 0;
 }
 
 
-const int FlagLottery2::GetPayMedal(const int& index)
+const int FlagLottery::GetPayMedal(const int& index)
 {
 	return payMedal[index];
 }
 
-const int FlagLottery2::GetSymbol()
+const int FlagLottery::GetSymbol()
 {
 	return hit;
 }

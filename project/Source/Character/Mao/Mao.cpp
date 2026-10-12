@@ -16,5 +16,5 @@ void Mao::Update()
 
 void Mao::Draw()
 {
-	CharacterBase::Draw();
+
 }

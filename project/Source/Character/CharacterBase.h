@@ -7,8 +7,8 @@ public:
 	CharacterBase();
 	~CharacterBase();
 
-	void Update()override;
-	void Draw()override;
+	virtual void Update()override;
+	virtual void Draw()override;
 
 	const VECTOR3 GetPositon() { return data.position; }
 private:

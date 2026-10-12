@@ -2,6 +2,7 @@
 
 #include "Sub/SubA/SubAManager.h"
 #include "main/flagLottery.h"
+#include "main/mainControl.h"
 
 PlayScene::PlayScene()
 {
@@ -9,7 +10,7 @@ PlayScene::PlayScene()
 	new SubAManager;
 
 	flag = new FlagLottery;
-
+	new MainControl;
 	num = -1;
 	hImage = 0;
 }

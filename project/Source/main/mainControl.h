@@ -1,6 +1,8 @@
 #pragma once
 #include "../objectBase.h"
 
+class Reel;
+
 class MainControl :public ObjectBase
 {
 public:
@@ -11,4 +13,5 @@ public:
 
 private:
 
+	Reel* reel;
 };

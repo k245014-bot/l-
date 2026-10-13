@@ -2,7 +2,6 @@
 #include "time.h"
 #include "mainControl.h"
 #include "reelTableBase.h"
-#include "flagLottery.h"
 #include "../Screen.h"
 #include "../csvReader.h"
 #include "../imageSynthesis.h"

@@ -165,7 +165,6 @@
     <ClInclude Include="Source\imageSynthesis.h" />
     <ClInclude Include="Source\input\inputManager.h" />
     <ClInclude Include="Source\main\creditMedal.h" />
-    <ClInclude Include="Source\main\flagLottery.h" />
     <ClInclude Include="Source\main\mainControl.h" />
     <ClInclude Include="Source\main\reel.h" />
     <ClInclude Include="Source\main\reelTableBase.h" />
@@ -206,7 +205,6 @@
     <ClCompile Include="Source\imageSynthesis.cpp" />
     <ClCompile Include="Source\input\inputManager.cpp" />
     <ClCompile Include="Source\main\creditMedal.cpp" />
-    <ClCompile Include="Source\main\flagLottery.cpp" />
     <ClCompile Include="Source\main\mainControl.cpp" />
     <ClCompile Include="Source\main\reel.cpp" />
     <ClCompile Include="Source\main\reelTableBase.cpp" />

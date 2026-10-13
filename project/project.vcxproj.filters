@@ -83,9 +83,6 @@
     <ClCompile Include="Source\main\creditMedal.cpp">
       <Filter>PlayScene\main</Filter>
     </ClCompile>
-    <ClCompile Include="Source\main\flagLottery.cpp">
-      <Filter>PlayScene\main</Filter>
-    </ClCompile>
     <ClCompile Include="Source\main\reel.cpp">
       <Filter>PlayScene\main</Filter>
     </ClCompile>
@@ -208,9 +205,6 @@
       <Filter>PlayScene\main</Filter>
     </ClInclude>
     <ClInclude Include="Source\main\creditMedal.h">
-      <Filter>PlayScene\main</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\main\flagLottery.h">
       <Filter>PlayScene\main</Filter>
     </ClInclude>
     <ClInclude Include="Source\main\reel.h">

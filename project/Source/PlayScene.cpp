@@ -1,7 +1,6 @@
 #include "PlayScene.h"
 
 #include "Sub/SubA/SubAManager.h"
-#include "main/flagLottery.h"
 #include "main/mainControl.h"
 
 PlayScene::PlayScene()
@@ -9,7 +8,6 @@ PlayScene::PlayScene()
 	//housingImage = LoadGraph("data/texture/Sammy_Heiwa_kali.png");
 	new SubAManager;
 
-	flag = new FlagLottery;
 	new MainControl;
 	num = -1;
 	hImage = 0;
@@ -26,7 +24,7 @@ void PlayScene::Update()
 		SceneManager::ChangeScene("TITLE");
 	}
 
-	if (CheckHitKey(KEY_INPUT_SPACE))
+	/*if (CheckHitKey(KEY_INPUT_SPACE))
 	{
 		flag->SetRand();
 		num = flag->GetSymbol();
@@ -35,7 +33,7 @@ void PlayScene::Update()
 	if (CheckHitKey(KEY_INPUT_1))
 	{
 		flag->Reset();
-	}
+	}*/
 }
 
 void PlayScene::Draw()

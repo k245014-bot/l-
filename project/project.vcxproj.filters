@@ -83,9 +83,6 @@
     <ClCompile Include="Source\main\creditMedal.cpp">
       <Filter>PlayScene\main</Filter>
     </ClCompile>
-    <ClCompile Include="Source\main\flagLottery.cpp">
-      <Filter>PlayScene\main</Filter>
-    </ClCompile>
     <ClCompile Include="Source\main\reel.cpp">
       <Filter>PlayScene\main</Filter>
     </ClCompile>
@@ -106,6 +103,9 @@
     </ClCompile>
     <ClCompile Include="Source\Character\CharacterBase.cpp">
       <Filter>PlayScene\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main\flagLottery.cpp">
+      <Filter>PlayScene\main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -210,9 +210,6 @@
     <ClInclude Include="Source\main\creditMedal.h">
       <Filter>PlayScene\main</Filter>
     </ClInclude>
-    <ClInclude Include="Source\main\flagLottery.h">
-      <Filter>PlayScene\main</Filter>
-    </ClInclude>
     <ClInclude Include="Source\main\reel.h">
       <Filter>PlayScene\main</Filter>
     </ClInclude>
@@ -233,6 +230,9 @@
     </ClInclude>
     <ClInclude Include="Source\Character\Mao\Mao.h">
       <Filter>PlayScene\Character\Mao</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\main\flagLottery.h">
+      <Filter>PlayScene\main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -281,5 +281,10 @@
     <Filter Include="PlayScene\Character\Mao">
       <UniqueIdentifier>{a1f74c61-15e5-439e-ab6a-56393e93b1e0}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="Source\main\flagSymbol.asm">
+      <Filter>PlayScene\main</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

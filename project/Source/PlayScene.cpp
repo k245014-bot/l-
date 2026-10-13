@@ -1,16 +1,17 @@
 #include "PlayScene.h"
 
 #include "Sub/SubA/SubAManager.h"
-#include "main/flagLottery.h"
 #include "main/mainControl.h"
+#include "main/flagLottery.h"
 
 PlayScene::PlayScene()
 {
 	//housingImage = LoadGraph("data/texture/Sammy_Heiwa_kali.png");
 	new SubAManager;
 
-	flag = new FlagLottery;
 	new MainControl;
+
+	flag = new FlagLottery;
 	num = -1;
 	hImage = 0;
 }

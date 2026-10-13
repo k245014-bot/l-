@@ -12,8 +12,8 @@ Reel::Reel(MainControl* data)
 {
 	mainData = data;
 
-	position.x = Screen::WIDTH / 4 - 20.0f;
-	position.y = Screen::HEIGHT / 2 - 81.0f;
+	position.x = Screen::WIDTH  / 4 - 20.0f;
+	position.y = Screen::HEIGHT / 2 - 91.0f;
 
 	char filename[40];
 	sprintf_s<40>(filename, "data/csv/reel/%03d.csv", 1);
@@ -466,71 +466,6 @@ void Reel::ScrollCheck(int index)
 void Reel::FlameMove(int index)
 {
 	reelData[index].currentFrame = (int)floorf(-reelData[index].scroll / (float)SYMBOL_SIZE);
-}
-
-void Reel::SymbolAligned()
-{
-	/*
-	if (hitSymbol == -1)
-	{
-		return;
-	}
-
-	bool hit[Reel_ID::ID_NUM];
-
-	for (int i = 0; i < Reel_ID::ID_NUM; i++)
-	{
-		hit[i] = false;
-	}
-
-
-	for (const auto& itr : hitSymbolLines)
-	{
-
-		if (hitSymbol == mainData->GetSymbol()->CHERRY_WEAK)
-		{
-			if (itr.first < 5)
-			{
-				continue;
-			}
-		}
-
-		for (int y = 0; y < Reel_ID::ID_NUM; y++)
-		{
-			for (int x = 0; x < reel[y].size(); x++)
-			{
-
-				if (hit[x] != 0)
-				{
-					continue;
-				}
-
-				int num = itr.second[y][x];
-
-				if (num == 1 && reel[y][x] == hitSymbol)
-				{
-					hit[x] = true;
-				}
-
-			}
-
-		}
-
-	}
-
-	if (hitSymbol == 4 && hit[Reel_ID::LEFT] == true)
-	{
-		mainData->SymbolAligned();
-	}
-
-	if (hit[Reel_ID::LEFT] == true &&
-		hit[Reel_ID::MIDDLE] == true &&
-		hit[Reel_ID::RIGHT] == true)
-	{
-		mainData->SymbolAligned();
-
-	}
-	*/
 }
 
 void Reel::ReelReset(int index)

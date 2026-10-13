@@ -9,7 +9,7 @@ SubBManager::SubBManager()
 
     camera->Set(mao);
     m_3DTarget = MakeScreen(800, 450, TRUE);
-    housingImage = LoadGraph("data/texture/Sammy_Heiwa_kali.png");
+    housingImage = LoadGraph("data/texture/Sammy_Heiwa_ver1.0.png");
 }
 
 SubBManager::~SubBManager()

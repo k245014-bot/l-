@@ -125,9 +125,7 @@ private:
 	void SearchSymbol(int index, int in_symbol);
 	void ScrollCheck(int index);
 	void FlameMove(int index);
-	//¬–ğ‚Ì”»’è
-	void SymbolAligned();
-
+	
 	void ReelReset(int index);
 
 	bool AllSlipStop();

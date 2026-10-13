@@ -1,6 +1,13 @@
 #pragma once
 #include "../objectBase.h"
 
+namespace
+{
+	//static const int MAX_RAND = 0xFFFF;
+}
+
+class FlagLottery;
+class CreditMedal;
 class Reel;
 
 class MainControl :public ObjectBase
@@ -13,5 +20,7 @@ public:
 
 private:
 
+	FlagLottery* flag;
+	CreditMedal* medal;
 	Reel* reel;
 };

@@ -211,7 +211,7 @@ void Reel::Draw()
 	{
 		//‰æ‘œ‚ğ­‚µ‘å‚«‚­‚µ‚½‚Ì‚Å
 		//•â³‚É18.0f‚ğ’Ç‰Á
-		reelData[i].cell = ((int)reelData[i].scroll % imageH + reelH) + 18.0f;
+		reelData[i].cell = ((int)reelData[i].scroll % imageH + reelH);
 
 		float shift = 0;
 

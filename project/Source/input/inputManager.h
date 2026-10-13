@@ -33,9 +33,9 @@ public:
 class InputManager :public ObjectBase
 {
 public:
-	InputManager(SceneBase* _scene);
+	InputManager();
 	~InputManager();
-	void Update()/*override*/;
+	void Update()override;
 
 	//ƒQƒbƒ^[
 	KeyPush GetKeyPush() { return isKey; }

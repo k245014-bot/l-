@@ -1,6 +1,6 @@
 #include "inputManager.h"
 
-InputManager::InputManager(SceneBase* scene) 
+InputManager::InputManager() 
 {
 	SetMousePoint(MOUSE_OFFSET_X, MOUSE_OFFSET_Y);
 	isCheckkey = false;

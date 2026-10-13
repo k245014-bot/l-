@@ -39,12 +39,17 @@ void CameraManager::CameraDrawScreen()
 
     //カメラなどをここで呼ばないと座標が取得できないため
     camera->CameraMove();
-    mao->ObjectDraw();
-    stage->ObjectDraw();
+    DrawObjects();
 
     //通常画面に戻す
     SetDrawScreen(DX_SCREEN_BACK);
 
     //筐体の液晶部分に3D演出を重ねる
     DrawGraph(110, 255, m_3DTarget, TRUE);
+}
+
+void CameraManager::DrawObjects()
+{
+    mao->ObjectDraw();
+    stage->ObjectDraw();
 }

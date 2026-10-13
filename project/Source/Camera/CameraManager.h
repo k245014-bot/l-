@@ -20,5 +20,6 @@ private:
 	Mao* mao;
 	Stage* stage;
 
+	void DrawObjects();
 	int m_3DTarget;
 };

@@ -112,10 +112,13 @@ void ObjectManager::DeleteAllGameObject()
 	for (auto itr = objects->begin(); itr != objects->end(); itr++)
 	{
 		GameObject* obj = *itr;
-		if (not obj->IsDontDestroy())
+		if (obj != nullptr)
 		{
-			delete obj;
-			*itr = nullptr;
+			if (not obj->IsDontDestroy())
+			{
+				delete obj;
+				*itr = nullptr;
+			}
 		}
 	}
 	for (auto itr = objects->begin(); itr != objects->end();)

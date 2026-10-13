@@ -2,6 +2,7 @@
 
 #include "Sub/SubA/SubAManager.h"
 #include "main/mainControl.h"
+#include "main/flagLottery.h"
 
 PlayScene::PlayScene()
 {
@@ -9,6 +10,8 @@ PlayScene::PlayScene()
 	new SubAManager;
 
 	new MainControl;
+
+	flag = new FlagLottery;
 	num = -1;
 	hImage = 0;
 }
@@ -24,7 +27,7 @@ void PlayScene::Update()
 		SceneManager::ChangeScene("TITLE");
 	}
 
-	/*if (CheckHitKey(KEY_INPUT_SPACE))
+	if (CheckHitKey(KEY_INPUT_SPACE))
 	{
 		flag->SetRand();
 		num = flag->GetSymbol();
@@ -33,7 +36,7 @@ void PlayScene::Update()
 	if (CheckHitKey(KEY_INPUT_1))
 	{
 		flag->Reset();
-	}*/
+	}
 }
 
 void PlayScene::Draw()

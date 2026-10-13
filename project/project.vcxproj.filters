@@ -104,6 +104,9 @@
     <ClCompile Include="Source\Character\CharacterBase.cpp">
       <Filter>PlayScene\Character</Filter>
     </ClCompile>
+    <ClCompile Include="Source\main\flagLottery.cpp">
+      <Filter>PlayScene\main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -227,6 +230,9 @@
     </ClInclude>
     <ClInclude Include="Source\Character\Mao\Mao.h">
       <Filter>PlayScene\Character\Mao</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\main\flagLottery.h">
+      <Filter>PlayScene\main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

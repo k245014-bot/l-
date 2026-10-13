@@ -1,8 +1,10 @@
 #pragma once
 #include "../../objectBase.h"
 
-class Camera;
+//class Camera;
 class Mao;
+class CameraManager;
+class Stage;
 
 class SubBManager :ObjectBase
 {
@@ -13,12 +15,10 @@ public:
 	void Update()override;
 	void Draw()override;
 private:
-	Camera* camera;
+	CameraManager* cameraManager;
 	Mao* mao;
-	void CameraSet();
+	Stage* stage;
 
-	int m_3DTarget;
-
-	//➑̂̉摜
+	//筐体画像
 	int housingImage;
 };

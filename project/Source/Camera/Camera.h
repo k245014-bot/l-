@@ -13,6 +13,7 @@ public:
 	void Draw()override;
 
 	void Set(Mao* _mao);
+	void CameraMove();
 private:
 	Mao* mao;
 };

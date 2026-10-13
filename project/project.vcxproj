@@ -158,16 +158,16 @@
     <ClInclude Include="Library\Time.h" />
     <ClInclude Include="Source\BootScene.h" />
     <ClInclude Include="Source\Camera\Camera.h" />
+    <ClInclude Include="Source\Character\CharacterBase.h" />
+    <ClInclude Include="Source\Character\Mao\Mao.h" />
     <ClInclude Include="Source\collision.h" />
     <ClInclude Include="Source\csvReader.h" />
     <ClInclude Include="Source\imageSynthesis.h" />
     <ClInclude Include="Source\input\inputManager.h" />
     <ClInclude Include="Source\main\creditMedal.h" />
-    <ClInclude Include="Source\main\flagLottery.h" />
     <ClInclude Include="Source\main\mainControl.h" />
     <ClInclude Include="Source\main\reel.h" />
     <ClInclude Include="Source\main\reelTableBase.h" />
-    <ClInclude Include="Source\Mao\Mao.h" />
     <ClInclude Include="Source\object2D.h" />
     <ClInclude Include="Source\object3D.h" />
     <ClInclude Include="Source\objectBase.h" />
@@ -198,13 +198,13 @@
     <ClCompile Include="Library\Time.cpp" />
     <ClCompile Include="Source\BootScene.cpp" />
     <ClCompile Include="Source\Camera\Camera.cpp" />
+    <ClCompile Include="Source\Character\CharacterBase.cpp" />
     <ClCompile Include="Source\Character\Mao\Mao.cpp" />
     <ClCompile Include="Source\collision.cpp" />
     <ClCompile Include="Source\csvReader.cpp" />
     <ClCompile Include="Source\imageSynthesis.cpp" />
     <ClCompile Include="Source\input\inputManager.cpp" />
     <ClCompile Include="Source\main\creditMedal.cpp" />
-    <ClCompile Include="Source\main\flagLottery.cpp" />
     <ClCompile Include="Source\main\mainControl.cpp" />
     <ClCompile Include="Source\main\reel.cpp" />
     <ClCompile Include="Source\main\reelTableBase.cpp" />
@@ -220,7 +220,7 @@
     <ClCompile Include="Source\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="Source\main\flagLottery.asm" />
+    <MASM Include="Source\main\flagSymbol.asm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

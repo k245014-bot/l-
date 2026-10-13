@@ -1,22 +1,21 @@
 #include "PlayScene.h"
 
 #include "Sub/SubA/SubAManager.h"
-#include "main/flagLottery.h"
+#include "main/mainControl.h"
 
 PlayScene::PlayScene()
 {
-	housingImage = LoadGraph("data/texture/sammy_ver4.0.png");
+	//housingImage = LoadGraph("data/texture/Sammy_Heiwa_kali.png");
 	new SubAManager;
 
-	/*flag = new FlagLottery2;*/
-
+	new MainControl;
 	num = -1;
 	hImage = 0;
 }
 
 PlayScene::~PlayScene()
 {
-	//delete flag;
+	delete flag;
 }
 
 void PlayScene::Update()
@@ -39,9 +38,9 @@ void PlayScene::Update()
 
 void PlayScene::Draw()
 {
+	//DrawGraph(0, 0, housingImage, true);
 	DrawString(0, 0, "PLAY SCENE", GetColor(255, 255, 255));
 	DrawString(100, 400, "Push [T]Key To Title", GetColor(255, 255, 255));
-	DrawGraph(0, 0, housingImage, true);
-
+	
 	DrawFormatString(0, 100, GetColor(255, 255, 255), "% d", num);
 }

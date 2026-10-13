@@ -12,7 +12,7 @@
 ; 5 = é„É`ÉFÉäÅ[B
 ; ========================================
 
-FlagLottery PROC
+FlagSymbol PROC
 
     ; ========================================
     ; á@ 0Å`65535ÇÃóêêîÇçÏÇÈ
@@ -416,25 +416,25 @@ ChanceReplay:
 
 
 OrderBellA:
-    mov eax, 10
+    mov eax, 14
     ret
 
 
 OrderBellB:
-    mov eax, 11
+    mov eax, 15
     ret
 
 
 OrderBellC:
-    mov eax, 12
+    mov eax, 16
     ret
 
 
 OrderBellD:
-    mov eax, 13
+    mov eax, 17
     ret
 
 
-FlagLottery ENDP
+FlagSymbol ENDP
 
 END

@@ -158,7 +158,6 @@
     <ClInclude Include="Library\Time.h" />
     <ClInclude Include="Source\BootScene.h" />
     <ClInclude Include="Source\Camera\Camera.h" />
-    <ClInclude Include="Source\Camera\CameraManager.h" />
     <ClInclude Include="Source\Character\CharacterBase.h" />
     <ClInclude Include="Source\Character\Mao\Mao.h" />
     <ClInclude Include="Source\collision.h" />
@@ -181,6 +180,7 @@
     <ClInclude Include="Source\Stage\Stage.h" />
     <ClInclude Include="Source\StateBase.h" />
     <ClInclude Include="Source\Sub\SubA\SubAManager.h" />
+    <ClInclude Include="Source\Sub\SubB\Screen\ScreenManager.h" />
     <ClInclude Include="Source\Sub\SubB\SubBManager.h" />
     <ClInclude Include="Source\TitleScene.h" />
     <ClInclude Include="Source\Transform.h" />
@@ -201,7 +201,6 @@
     <ClCompile Include="Library\Time.cpp" />
     <ClCompile Include="Source\BootScene.cpp" />
     <ClCompile Include="Source\Camera\Camera.cpp" />
-    <ClCompile Include="Source\Camera\CameraManager.cpp" />
     <ClCompile Include="Source\Character\CharacterBase.cpp" />
     <ClCompile Include="Source\Character\Mao\Mao.cpp" />
     <ClCompile Include="Source\collision.cpp" />
@@ -221,6 +220,7 @@
     <ClCompile Include="Source\SoundManager.cpp" />
     <ClCompile Include="Source\Stage\Stage.cpp" />
     <ClCompile Include="Source\Sub\SubA\SubAManager.cpp" />
+    <ClCompile Include="Source\Sub\SubB\Screen\ScreenManager.cpp" />
     <ClCompile Include="Source\Sub\SubB\SubBManager.cpp" />
     <ClCompile Include="Source\TitleScene.cpp" />
     <ClCompile Include="Source\Transform.cpp" />

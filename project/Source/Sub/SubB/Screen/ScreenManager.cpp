@@ -1,9 +1,9 @@
-#include "CameraManager.h"
-#include "Camera.h"
-#include "../Character/Mao/Mao.h"
-#include "../Stage/Stage.h"
+#include "ScreenManager.h"
+#include "../../../Camera/Camera.h"
+#include "../../../Character/Mao/Mao.h"
+#include "../../../Stage/Stage.h"
 
-CameraManager::CameraManager()
+ScreenManager::ScreenManager()
 {
 	camera = new Camera;
     mao = FindGameObject<Mao>();
@@ -12,22 +12,22 @@ CameraManager::CameraManager()
     m_3DTarget = MakeScreen(660 , 560, TRUE);
 }
 
-CameraManager::~CameraManager()
+ScreenManager::~ScreenManager()
 {
     DeleteGraph(m_3DTarget);
 }
 
-void CameraManager::Update()
+void ScreenManager::Update()
 {
     
 }
 
-void CameraManager::Draw()
+void ScreenManager::Draw()
 {
     
 }
 
-void CameraManager::CameraDrawScreen()
+void ScreenManager::CameraDrawScreen()
 {
     //2D‚Ìâž‘Ì‚ð’Êí‰æ–Ê‚É•`‰æ
     SetDrawScreen(DX_SCREEN_BACK);
@@ -48,7 +48,7 @@ void CameraManager::CameraDrawScreen()
     DrawGraph(110, 255, m_3DTarget, TRUE);
 }
 
-void CameraManager::DrawObjects()
+void ScreenManager::DrawObjects()
 {
     mao->ObjectDraw();
     stage->ObjectDraw();

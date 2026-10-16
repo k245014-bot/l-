@@ -1,6 +1,6 @@
 #include "SubBManager.h"
 #include "../../Camera/Camera.h"
-#include "../../Camera/CameraManager.h"
+#include "Screen/ScreenManager.h"
 #include "../../Character/Mao/Mao.h"
 #include "../../Stage/Stage.h"
 
@@ -8,7 +8,7 @@ SubBManager::SubBManager()
 {
 	mao = new Mao;
     new Stage;
-    cameraManager = new CameraManager;
+    cameraManager = new ScreenManager;
     housingImage = LoadGraph("data/texture/Sammy_Heiwa_ver1.0.png");
 }
 

@@ -62,6 +62,9 @@ public:
 
 	const int GetPayMedal(const int& index);
 	const int GetSymbol();
+	const bool GetHit(const int& index) const { return hit == index; }
+	const bool GetPrevHit(const int& index) const { return prevHit == index; }
+	const bool GetHit() const { return (hit != 0); }
 
 private:
 

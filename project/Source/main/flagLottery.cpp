@@ -87,6 +87,7 @@ void FlagLottery::SetRand()
 		ratio += itr.second;
 	}
 
+	hit = 0;
 }
 
 void FlagLottery::SymbolReset()

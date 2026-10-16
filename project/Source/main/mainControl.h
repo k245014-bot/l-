@@ -4,6 +4,8 @@
 namespace
 {
 	//static const int MAX_RAND = 0xFFFF;
+	static const int BET_MAX = 3;
+	static const int WAIT_MAX = 4.1f;
 }
 
 class FlagLottery;
@@ -21,15 +23,28 @@ public:
 	enum  Main_State
 	{
 		STAY,
-		BET,
-		SPEEN,
+		START,
 		WAIT,
+		SPEEN,
 		RESULT,
 		RESET,
 	};
 
+	enum Input_ID
+	{
+		NONE=0,
+		BET,
+		LEVER,
+		LEFT,
+		MIDDLE,
+		RIGHT,
+
+		NUM
+	};
+
 	FlagLottery* GetFlagData() { return flag; }
 	Reel* GetReelData() { return reel; }
+	Main_State GetState() { return state; }
 	bool GetAllPush();
 	bool GetDontPush();
 
@@ -42,6 +57,13 @@ public:
 
 private:
 
+	struct Input_Data
+	{
+		int setKey;
+		bool active;
+		bool rock;
+	};
+
 	FlagLottery* flag;
 	CreditMedal* medal;
 	Reel* reel;
@@ -51,9 +73,14 @@ private:
 
 	bool betSkip;
 
-	void BetUpdate();
+	Input_Data input[NUM];
+	float waitTime;
+
+	void StartUpdate();
 	void SpeenUpdate();
 	void WaitUpdate();
 	void ResultUpdate();
 	void ResetUpdate();
+
+	void SetInput(int index,int key);
 };

@@ -27,7 +27,7 @@ void PlayScene::Update()
 		SceneManager::ChangeScene("TITLE");
 	}
 
-	if (CheckHitKey(KEY_INPUT_SPACE))
+	/*if (CheckHitKey(KEY_INPUT_SPACE))
 	{
 		flag->SetRand();
 		num = flag->GetSymbol();
@@ -36,7 +36,7 @@ void PlayScene::Update()
 	if (CheckHitKey(KEY_INPUT_1))
 	{
 		flag->Reset();
-	}
+	}*/
 }
 
 void PlayScene::Draw()
@@ -45,5 +45,5 @@ void PlayScene::Draw()
 	DrawString(0, 0, "PLAY SCENE", GetColor(255, 255, 255));
 	DrawString(100, 400, "Push [T]Key To Title", GetColor(255, 255, 255));
 	
-	DrawFormatString(0, 100, GetColor(255, 255, 255), "% d", num);
+	//DrawFormatString(0, 100, GetColor(255, 255, 255), "% d", num);
 }

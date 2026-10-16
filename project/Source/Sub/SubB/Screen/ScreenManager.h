@@ -1,15 +1,15 @@
 #pragma once
-#include "../object3D.h"
+#include "../../../object3D.h"
 
 class Camera;
 class Mao;
 class Stage;
 
-class CameraManager :Object3D
+class ScreenManager :Object3D
 {
 public:
-	CameraManager();
-	~CameraManager();
+	ScreenManager();
+	~ScreenManager();
 
 	void Update()override;
 	void Draw()override;

@@ -3,7 +3,7 @@
 
 //class Camera;
 class Mao;
-class CameraManager;
+class ScreenManager;
 class Stage;
 
 class SubBManager :ObjectBase
@@ -15,7 +15,7 @@ public:
 	void Update()override;
 	void Draw()override;
 private:
-	CameraManager* cameraManager;
+	ScreenManager* cameraManager;
 	Mao* mao;
 	Stage* stage;
 

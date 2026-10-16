@@ -107,11 +107,11 @@
     <ClCompile Include="Source\main\flagLottery.cpp">
       <Filter>PlayScene\main</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Camera\CameraManager.cpp">
-      <Filter>PlayScene\Camera</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Stage\Stage.cpp">
       <Filter>PlayScene\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sub\SubB\Screen\ScreenManager.cpp">
+      <Filter>PlayScene\Sub\SubB\Screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -240,11 +240,11 @@
     <ClInclude Include="Source\main\flagLottery.h">
       <Filter>PlayScene\main</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Camera\CameraManager.h">
-      <Filter>PlayScene\Camera</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Stage\Stage.h">
       <Filter>PlayScene\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Sub\SubB\Screen\ScreenManager.h">
+      <Filter>PlayScene\Sub\SubB\Screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +295,9 @@
     </Filter>
     <Filter Include="PlayScene\Stage">
       <UniqueIdentifier>{08bf3804-5939-4c01-af05-35799563df1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Sub\SubB\Screen">
+      <UniqueIdentifier>{69036e43-bc98-4cfb-998e-6e2c267d4779}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -229,6 +229,7 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="Source\main\flagSymbol.asm" />
+    <MASM Include="Source\main\SlotInput.asm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

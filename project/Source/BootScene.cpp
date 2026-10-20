@@ -1,5 +1,5 @@
 #include "BootScene.h"
-#include "SoundManager.h"
+#include "Common/SoundManager.h"
 
 BootScene::BootScene()
 {

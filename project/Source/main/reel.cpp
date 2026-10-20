@@ -3,10 +3,10 @@
 #include "mainControl.h"
 #include "reelTableBase.h"
 #include "../Screen.h"
-#include "../csvReader.h"
-#include "../imageSynthesis.h"
-#include "../randomInput.h"
-#include "../input/inputManager.h"
+#include "../Common/csvReader.h"
+#include "../Common/imageSynthesis.h"
+#include "../Common/randomInput.h"
+#include "../Common/input/inputManager.h"
 
 Reel::Reel(MainControl* data)
 {

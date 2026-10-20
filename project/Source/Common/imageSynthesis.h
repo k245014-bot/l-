@@ -1,5 +1,5 @@
 #pragma once
-#include "../Library/myDxLib.h"
+#include "../../Library/myDxLib.h"
 #include <map>
 #include <vector>
 

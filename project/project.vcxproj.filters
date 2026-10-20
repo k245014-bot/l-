@@ -322,5 +322,8 @@
     <MASM Include="Source\main\flagSymbol.asm">
       <Filter>PlayScene\main</Filter>
     </MASM>
+    <MASM Include="Source\main\SlotInput.asm">
+      <Filter>PlayScene\main</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

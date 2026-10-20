@@ -113,6 +113,9 @@
     <ClCompile Include="Source\Sub\SubB\Screen\ScreenManager.cpp">
       <Filter>PlayScene\Sub\SubB\Screen</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Stage\Wall\Wall.cpp">
+      <Filter>PlayScene\Stage\Wall</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -246,6 +249,9 @@
     <ClInclude Include="Source\Sub\SubB\Screen\ScreenManager.h">
       <Filter>PlayScene\Sub\SubB\Screen</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Stage\Wall\Wall.h">
+      <Filter>PlayScene\Stage\Wall</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -298,6 +304,9 @@
     </Filter>
     <Filter Include="PlayScene\Sub\SubB\Screen">
       <UniqueIdentifier>{69036e43-bc98-4cfb-998e-6e2c267d4779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Stage\Wall">
+      <UniqueIdentifier>{0b09b988-2ffe-41e8-96c9-c369b798c667}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

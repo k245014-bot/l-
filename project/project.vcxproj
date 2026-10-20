@@ -178,6 +178,7 @@
     <ClInclude Include="Source\SceneFactory.h" />
     <ClInclude Include="Source\SoundManager.h" />
     <ClInclude Include="Source\Stage\Stage.h" />
+    <ClInclude Include="Source\Stage\Wall\Wall.h" />
     <ClInclude Include="Source\StateBase.h" />
     <ClInclude Include="Source\Sub\SubA\SubAManager.h" />
     <ClInclude Include="Source\Sub\SubB\Screen\ScreenManager.h" />
@@ -219,6 +220,7 @@
     <ClCompile Include="Source\SceneFactory.cpp" />
     <ClCompile Include="Source\SoundManager.cpp" />
     <ClCompile Include="Source\Stage\Stage.cpp" />
+    <ClCompile Include="Source\Stage\Wall\Wall.cpp" />
     <ClCompile Include="Source\Sub\SubA\SubAManager.cpp" />
     <ClCompile Include="Source\Sub\SubB\Screen\ScreenManager.cpp" />
     <ClCompile Include="Source\Sub\SubB\SubBManager.cpp" />

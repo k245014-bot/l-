@@ -64,7 +64,7 @@ Reel::Reel(MainControl* data)
 	GetGraphSize(line, &imageW, &imageH);
 
 	//‡‚í‚¹‚é‰æ‘œ
-	symbolHandle.emplace(1, LoadGraph("data/texture/Bell_3.png"));
+	symbolHandle.emplace(1, LoadGraph("data/texture/maobell_06.png"));
 	symbolHandle.emplace(2, LoadGraph("data/texture/replay.png"));
 	symbolHandle.emplace(3, LoadGraph("data/texture/suica_ver1.1.png"));
 	symbolHandle.emplace(4, LoadGraph("data/texture/cherry.png"));

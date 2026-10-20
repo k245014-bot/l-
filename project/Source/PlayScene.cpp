@@ -3,15 +3,19 @@
 #include "Sub/SubA/SubAManager.h"
 #include "main/mainControl.h"
 #include "main/flagLottery.h"
+#include "Common/CameraEditor/CameraEditor.h"
+#include "Common/Input/inputManager.h"
 
 PlayScene::PlayScene()
 {
-	//housingImage = LoadGraph("data/texture/Sammy_Heiwa_kali.png");
+	new InputManager;
 	new SubAManager;
 
 	new MainControl;
 
 	flag = new FlagLottery;
+
+	cameraEditor = nullptr;
 	num = -1;
 	hImage = 0;
 }
@@ -27,7 +31,7 @@ void PlayScene::Update()
 		SceneManager::ChangeScene("TITLE");
 	}
 
-	/*if (CheckHitKey(KEY_INPUT_SPACE))
+	if (CheckHitKey(KEY_INPUT_SPACE))
 	{
 		flag->SetRand();
 		num = flag->GetSymbol();
@@ -36,7 +40,18 @@ void PlayScene::Update()
 	if (CheckHitKey(KEY_INPUT_1))
 	{
 		flag->Reset();
-	}*/
+	}
+
+	if (CheckHitKey(KEY_INPUT_LSHIFT) && CheckHitKey(KEY_INPUT_1))
+	{
+		if (cameraEditor == nullptr)
+			cameraEditor = new CameraEditor;
+	}
+
+	if (CheckHitKey(KEY_INPUT_ESCAPE))
+	{
+		SceneManager::Exit();
+	}
 }
 
 void PlayScene::Draw()
@@ -45,5 +60,5 @@ void PlayScene::Draw()
 	DrawString(0, 0, "PLAY SCENE", GetColor(255, 255, 255));
 	DrawString(100, 400, "Push [T]Key To Title", GetColor(255, 255, 255));
 	
-	//DrawFormatString(0, 100, GetColor(255, 255, 255), "% d", num);
+	DrawFormatString(0, 100, GetColor(255, 255, 255), "% d", num);
 }

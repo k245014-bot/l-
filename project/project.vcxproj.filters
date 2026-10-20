@@ -116,6 +116,9 @@
     <ClCompile Include="Source\Common\Transform.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Common\CameraEditor\CameraEditor.cpp">
+      <Filter>Common\CameraEditor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -252,6 +255,9 @@
     <ClInclude Include="Source\Common\Transform.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Common\CameraEditor\CameraEditor.h">
+      <Filter>Common\CameraEditor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -314,6 +320,9 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="Source\main\flagSymbol.asm">
+      <Filter>PlayScene\main</Filter>
+    </MASM>
+    <MASM Include="Source\main\SlotInput.asm">
       <Filter>PlayScene\main</Filter>
     </MASM>
   </ItemGroup>

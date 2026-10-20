@@ -3,7 +3,7 @@
 
 class Mao;
 
-class Camera :Object3D
+class Camera :public Object3D
 {
 public:
 	Camera();
@@ -14,6 +14,11 @@ public:
 
 	void Set(Mao* _mao);
 	void CameraMove();
+	void NormalMove(float _speed);
+	void Move(VECTOR3 _vector, float _speed);
+
 private:
 	Mao* mao;
+	//ÉJÉÅÉâÇÃà íuí≤êÆ
+	VECTOR3 CAMERA_OFFSET = VECTOR3(0.0f, 200.0f, -500.0f);
 };

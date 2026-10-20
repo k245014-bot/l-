@@ -160,6 +160,7 @@
     <ClInclude Include="Source\Camera\Camera.h" />
     <ClInclude Include="Source\Character\CharacterBase.h" />
     <ClInclude Include="Source\Character\Mao\Mao.h" />
+    <ClInclude Include="Source\Common\CameraEditor\CameraEditor.h" />
     <ClInclude Include="Source\Common\csvReader.h" />
     <ClInclude Include="Source\Common\imageSynthesis.h" />
     <ClInclude Include="Source\Common\Input\inputManager.h" />
@@ -204,6 +205,7 @@
     <ClCompile Include="Source\Camera\Camera.cpp" />
     <ClCompile Include="Source\Character\CharacterBase.cpp" />
     <ClCompile Include="Source\Character\Mao\Mao.cpp" />
+    <ClCompile Include="Source\Common\CameraEditor\CameraEditor.cpp" />
     <ClCompile Include="Source\Common\csvReader.cpp" />
     <ClCompile Include="Source\Common\imageSynthesis.cpp" />
     <ClCompile Include="Source\Common\Input\inputManager.cpp" />

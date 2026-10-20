@@ -6,6 +6,7 @@
 /// </summary>
 
 class  FlagLottery;
+class CameraEditor;
 
 class PlayScene : public SceneBase
 {
@@ -17,6 +18,7 @@ public:
 private:
 
 	FlagLottery* flag;
+	CameraEditor* cameraEditor;
 
 	int hImage;
 	////➑̂̉摜

@@ -13,7 +13,7 @@ public:
 	virtual void ObjectDraw();
 	//ÉQÉbÉ^Å[
 
-	inline const Transform& GetPosition() { return data; }
+	inline const Transform& GetTransform() { return data; }
 	inline const VECTOR3& GetVelocity() { return velocity; }
 	inline const int& GetModel() const { return hModel; }
 	virtual const MATRIX Matrix()const;

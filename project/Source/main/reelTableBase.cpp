@@ -1,5 +1,5 @@
 #include "reelTableBase.h"
-#include "../csvReader.h"
+#include "../Common/csvReader.h"
 
 ReelTableBase::ReelTableBase(std::string filename)
 {

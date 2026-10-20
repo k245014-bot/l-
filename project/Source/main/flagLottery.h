@@ -1,6 +1,6 @@
 #pragma once
-#include "../objectBase.h"
-#include "../randomInput.h"
+#include "../Common/Object/objectBase.h"
+#include "../Common/randomInput.h"
 #include <map>
 #include <iostream>
 

@@ -1,5 +1,5 @@
 #pragma once
-#include "../../objectBase.h"
+#include "../../Common/Object/objectBase.h"
 
 //class Camera;
 class Mao;

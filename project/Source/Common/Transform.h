@@ -1,5 +1,5 @@
 #pragma once
-#include "../Library/myDxLib.h"
+#include "../../Library/myDxLib.h"
 
 /// <summary>
 /// 3Dの変形パラメーター

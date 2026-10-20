@@ -51,10 +51,10 @@ public:
 		CHANCE = 8,			//チャンス目A
 		CHANCE_REPLAY = 9,		//チャンスリプレイ(勝舞揃い)
 
-		BELL_ORDER_A = 14, //押し順ベル(中,右,左)
-		BELL_ORDER_B = 15, //押し順ベル(中,左,右)
-		BELL_ORDER_C = 16, //押し順ベル(右,中,左)
-		BELL_ORDER_D = 17, //押し順ベル(右,左,中)
+		BELL_ORDER_A = 10, //押し順ベル(中,右,左)
+		BELL_ORDER_B = 11, //押し順ベル(中,左,右)
+		BELL_ORDER_C = 12, //押し順ベル(右,中,左)
+		BELL_ORDER_D = 13, //押し順ベル(右,左,中)
 
 
 		SYMBOL_MAX

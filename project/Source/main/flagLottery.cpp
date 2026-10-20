@@ -87,7 +87,7 @@ void FlagLottery::SetRand()
 		ratio += itr.second;
 	}
 
-	hit = 1;
+	hit = ID::BELL_ORDER_A;
 }
 
 void FlagLottery::SymbolReset()

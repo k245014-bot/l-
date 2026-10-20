@@ -50,33 +50,6 @@
     <ClCompile Include="Library\Time.cpp">
       <Filter>Library</Filter>
     </ClCompile>
-    <ClCompile Include="Source\objectBase.cpp">
-      <Filter>common\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\object2D.cpp">
-      <Filter>common\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Transform.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\object3D.cpp">
-      <Filter>common\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\collision.cpp">
-      <Filter>common\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\csvReader.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\imageSynthesis.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\SoundManager.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\input\inputManager.cpp">
-      <Filter>common\input</Filter>
-    </ClCompile>
     <ClCompile Include="Source\main\mainControl.cpp">
       <Filter>PlayScene\main</Filter>
     </ClCompile>
@@ -112,6 +85,36 @@
     </ClCompile>
     <ClCompile Include="Source\Sub\SubB\Screen\ScreenManager.cpp">
       <Filter>PlayScene\Sub\SubB\Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Stage\Wall\Wall.cpp">
+      <Filter>PlayScene\Stage\Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Input\inputManager.cpp">
+      <Filter>Common\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Object\collision.cpp">
+      <Filter>Common\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Object\object2D.cpp">
+      <Filter>Common\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Object\object3D.cpp">
+      <Filter>Common\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Object\objectBase.cpp">
+      <Filter>Common\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\csvReader.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\imageSynthesis.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\SoundManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Transform.cpp">
+      <Filter>Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -177,39 +180,6 @@
     <ClInclude Include="Library\myDxLib.h">
       <Filter>Library</Filter>
     </ClInclude>
-    <ClInclude Include="Source\objectBase.h">
-      <Filter>common\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\object2D.h">
-      <Filter>common\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Transform.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\object3D.h">
-      <Filter>common\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\collision.h">
-      <Filter>common\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\randomInput.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\csvReader.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\imageSynthesis.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\SoundManager.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\StateBase.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\input\inputManager.h">
-      <Filter>common\input</Filter>
-    </ClInclude>
     <ClInclude Include="Source\main\mainControl.h">
       <Filter>PlayScene\main</Filter>
     </ClInclude>
@@ -246,6 +216,42 @@
     <ClInclude Include="Source\Sub\SubB\Screen\ScreenManager.h">
       <Filter>PlayScene\Sub\SubB\Screen</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Stage\Wall\Wall.h">
+      <Filter>PlayScene\Stage\Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Input\inputManager.h">
+      <Filter>Common\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Object\collision.h">
+      <Filter>Common\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Object\object2D.h">
+      <Filter>Common\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Object\object3D.h">
+      <Filter>Common\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Object\objectBase.h">
+      <Filter>Common\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\csvReader.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\imageSynthesis.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\randomInput.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\SoundManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\StateBase.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Transform.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -262,15 +268,6 @@
     </Filter>
     <Filter Include="ImGui">
       <UniqueIdentifier>{a717257b-67b3-4bfa-834c-1e34032b33b0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="common">
-      <UniqueIdentifier>{37862be0-0d27-44f8-a3d9-8e0f90e17a88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="common\Object">
-      <UniqueIdentifier>{165e4fd3-6b62-4ee3-94bd-da25920c3cb4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="common\input">
-      <UniqueIdentifier>{0470fecd-442c-43f2-8233-4fc9143b5ef1}</UniqueIdentifier>
     </Filter>
     <Filter Include="PlayScene\main">
       <UniqueIdentifier>{eed44056-0fdf-4cc8-9599-922850c43d4f}</UniqueIdentifier>
@@ -298,6 +295,21 @@
     </Filter>
     <Filter Include="PlayScene\Sub\SubB\Screen">
       <UniqueIdentifier>{69036e43-bc98-4cfb-998e-6e2c267d4779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Stage\Wall">
+      <UniqueIdentifier>{0b09b988-2ffe-41e8-96c9-c369b798c667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{2fb693fb-c5f9-460f-8b54-76b8e2e4becd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\CameraEditor">
+      <UniqueIdentifier>{0f3e8954-004f-4863-ae17-24e0b99ffb17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Input">
+      <UniqueIdentifier>{4bfb015c-cf81-4603-991b-231a23687866}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Object">
+      <UniqueIdentifier>{769ba19a-4b2f-4bdc-9743-3cf3ac5f3ee0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

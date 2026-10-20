@@ -1,6 +1,5 @@
 #pragma once
-#include "../../../object3D.h"
-
+#include "../../../Common/Object/object3D.h"
 class Camera;
 class Mao;
 class Stage;

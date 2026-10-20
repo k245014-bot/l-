@@ -1,6 +1,6 @@
 #pragma once
 #include "objectBase.h"
-#include "Transform.h"
+#include "../Transform.h"
 
 class Object3D :public ObjectBase
 {

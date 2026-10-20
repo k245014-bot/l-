@@ -1,5 +1,5 @@
 #pragma once
-#include "../objectBase.h"
+#include "../Object/objectBase.h"
 
 static const int KEYCOOLTIME = 20;
 static const int STICK_MAX = 32767;

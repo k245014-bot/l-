@@ -1,7 +1,6 @@
 #include "collision.h"
 #include "object3D.h"
 
-
 Collision::Collision()
 {
 }

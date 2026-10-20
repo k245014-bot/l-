@@ -1,5 +1,7 @@
 #pragma once
-#include "../object3D.h"
+#include "../Common/Object/object3D.h"
+
+class Wall;
 
 class Stage : public Object3D
 {
@@ -13,5 +15,8 @@ public:
 	void ObjectDraw()override;
 
 private:
+	Wall* wall;
 	int skyModel;
+	int wallModel;
+	VECTOR3 wallPosition;
 };

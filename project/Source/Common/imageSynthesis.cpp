@@ -68,14 +68,16 @@ int ImageSynthesis::Create(int baseImage, std::vector<std::vector<int>> list, st
 
 				if (symbolIndex == itr.first)
 				{
-					if (symbolIndex == 6 || symbolIndex == 7 || symbolIndex == 8)
+					DrawGraph(0, (int)wait * y, itr.second, true);
+
+					/*if (symbolIndex == 6 || symbolIndex == 7 || symbolIndex == 8)
 					{
 						DrawGraph(0, (int)wait * y, itr.second, true);
 					}
 					else
 					{
 						DrawGraph(10, (int)wait * y, itr.second, true);
-					}
+					}*/
 					
 				}
 			}

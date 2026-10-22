@@ -12,8 +12,8 @@ Reel::Reel(MainControl* data)
 {
 	mainData = data;
 
-	position.x = Screen::WIDTH  / 4 - 20.0f;
-	position.y = Screen::HEIGHT / 2 - 91.0f;
+	position.x = Screen::WIDTH  / 4 - 15.0f;
+	position.y = Screen::HEIGHT / 2 - 86.0f;
 
 	char filename[40];
 	sprintf_s<40>(filename, "data/csv/reel/%03d.csv", 1);
@@ -35,7 +35,7 @@ Reel::Reel(MainControl* data)
 
 
 
-	for (int i = 0; i < MAX_LINE; i++)
+	/*for (int i = 0; i < MAX_LINE; i++)
 	{
 		sprintf_s<40>(filename, "data/csv/hitLine/%02d.csv", i + 1);
 		csv->AddFaile(filename);
@@ -52,7 +52,7 @@ Reel::Reel(MainControl* data)
 			hitSymbolLines[i].push_back(line);
 		}
 
-	}
+	}*/
 
 	is = new ImageSynthesis;
 	rand = new Random;
@@ -64,7 +64,7 @@ Reel::Reel(MainControl* data)
 	GetGraphSize(line, &imageW, &imageH);
 
 	//合わせる画像
-	symbolHandle.emplace(1, LoadGraph("data/texture/Bell_3.png"));
+	symbolHandle.emplace(1, LoadGraph("data/texture/maobell_06.png"));
 	symbolHandle.emplace(2, LoadGraph("data/texture/replay.png"));
 	symbolHandle.emplace(3, LoadGraph("data/texture/suica_ver1.1.png"));
 	symbolHandle.emplace(4, LoadGraph("data/texture/cherry.png"));
@@ -86,13 +86,13 @@ Reel::Reel(MainControl* data)
 		reelData[i].slipStop = false;
 		reelData[i].stopSpeed = 0;
 		//reelData[i].scroll = -180.0f;
-		reelData[i].scroll = -SYMBOL_SIZE * 3;
-
+		//reelData[i].scroll = -SYMBOL_SIZE * 3;
+		reelData[i].scroll = 0;
 		reelData[i].slipCount = 0;
 		//reelData[i].snapTarget = -180.0f;
 		reelData[i].snapTarget = -SYMBOL_SIZE * 3;
 
-		reelData[i].prevFrame = 3;
+		reelData[i].prevFrame = 0;
 
 		reelData[i].currentFrame = 0;
 	}
@@ -108,9 +108,9 @@ Reel::Reel(MainControl* data)
 
 	GetGraphSize(hImage, nullptr, &reelH);
 
-	/*reelTable[Reel_ID::LEFT] = new ReelTableBase("data/csv/table/csv/left/%02d.csv");
-	reelTable[Reel_ID::MIDDLE] = new ReelTableBase("data/csv/table/csv/middle/%02d.csv");
-	reelTable[Reel_ID::RIGHT] = new ReelTableBase("data/csv/table/csv/right/%02d.csv");*/
+	reelTable[Reel_ID::LEFT] = new ReelTableBase("data/csv/table/left/%02d.csv");
+	reelTable[Reel_ID::MIDDLE] = new ReelTableBase("data/csv/table/middle/%02d.csv");
+	reelTable[Reel_ID::RIGHT] = new ReelTableBase("data/csv/table/right/%02d.csv");
 
 
 	reelCover = LoadGraph("data/texture/reelBuller.png");
@@ -129,76 +129,76 @@ Reel::~Reel()
 
 void Reel::Update()
 {
-	//switch (mainData->GetState())
-	//{
-	//	//リセット
-	//case MainControl::Main_State::STAY:
+	switch (mainData->GetState())
+	{
+		//リセット
+	case MainControl::Main_State::STAY:
 
-	//	Reset();
+		Reset();
 
-	//	break;
-	//case MainControl::Main_State::BET:
+		break;
+	case MainControl::Main_State::START:
 
-	//	break;
+		break;
 
-	//case MainControl::Main_State::SPEEN:
+	case MainControl::Main_State::SPEEN:
 
-	//	first = true;
+		first = true;
 
-	//	for (int i = 0; i < Reel_ID::ID_NUM; i++)
-	//	{
-	//		Speen(i);
-	//	}
+		for (int i = 0; i < Reel_ID::ID_NUM; i++)
+		{
+			Speen(i);
+		}
 
 
-	//	if (++pushWaitTime > 30)
-	//	{
-	//		for (int i = 0; i < Reel_ID::ID_NUM; i++)
-	//		{
-	//			//PushCheck(i);
+		if (++pushWaitTime > 30)
+		{
+			for (int i = 0; i < Reel_ID::ID_NUM; i++)
+			{
+				//PushCheck(i);
 
-	//			//リールを止める
-	//			if (reelData[i].push == true)
-	//			{
-	//				Stop(i);
-	//			}
-	//		}
+				//リールを止める
+				if (reelData[i].push == true)
+				{
+					Stop(i);
+				}
+			}
 
-	//		pushWaitTime = 30;
-	//	}
+			pushWaitTime = 30;
+		}
 
-	//	if (AllReelStop() == true && AllSlipStop() == true)
-	//	{
-	//		resetTime += Time::DeltaTime();
+		if (AllReelStop() == true && AllSlipStop() == true)
+		{
+			resetTime += Time::DeltaTime();
 
-	//		float rate = resetTime / RESET_WAIT_TIME;
+			float rate = resetTime / RESET_WAIT_TIME;
 
-	//		if (rate >= 1.0f)
-	//		{
-	//			for (int i = 0; i < Reel_ID::ID_NUM; i++)
-	//			{
-	//				FlameMove(i);
-	//				ScrollCheck(i);
-	//			}
-	//			mainData->ResultCheck();
-	//			resetTime = 0;
+			if (rate >= 1.0f)
+			{
+				for (int i = 0; i < Reel_ID::ID_NUM; i++)
+				{
+					FlameMove(i);
+					ScrollCheck(i);
+				}
+				mainData->ResultCheck();
+				resetTime = 0;
 
-	//		}
-	//	}
+			}
+		}
 
-	//	break;
+		break;
 
-	//case MainControl::Main_State::RESULT:
+	case MainControl::Main_State::RESULT:
 
-	//	SymbolAligned();
+		mainData->SymbolAligned();
 
-	//	mainData->ResetCheck();
+		mainData->ResetCheck();
 
-	//	Reset();
+		Reset();
 
-	//	break;
+		break;
 
-	//}
+	}
 
 	Scroll();
 }
@@ -214,13 +214,9 @@ void Reel::Draw()
 
 		float shift = 0;
 
-		if (i < 2)
+		if (i > 1)
 		{
-			shift = -11.0f + (i * 6.0f);
-		}
-		else
-		{
-			shift = 2.0f;
+			//shift = 11.0f;
 		}
 
 
@@ -228,6 +224,14 @@ void Reel::Draw()
 		DrawRectGraph((int)position.x + (165 * i) + shift, (int)position.y, 0, reelData[i].cell + imageH, 140, SYMBOL_SIZE * 3, reelData[i].symbolListImage, true);
 		DrawRectGraph((int)position.x + (165 * i) + shift, (int)position.y, 0, reelData[i].cell, 140, SYMBOL_SIZE * 3, reelData[i].symbolListImage, true);
 
+	}
+
+	for (int y = 0; y < Reel_ID::ID_NUM; y++)
+	{
+		for (int x = 0; x < reel[y].size(); x++)
+		{
+			DrawFormatString(x * 40, y * 20 + 100, GetColor(255, 255, 255), "%2d", reel[y][x]);
+		}
 	}
 }
 
@@ -404,18 +408,8 @@ void Reel::SearchSymbol(int index, int in_symbol)
 
 	int hit = 0;
 
-	if (stopIndex < 0)
-	{
-		stopIndex = index;
-	}
-
-
-	if (hitSymbol == 7)
-		hitSymbol = 5;
-
-	if (hitSymbol == 12)
-		hitSymbol = 1;
-
+	//押した順番
+	stopIndex++;
 
 	hit = reelTable[index]->GetStopLine(reelData[index].symbolIndex, hitSymbol, stopIndex);
 
@@ -439,7 +433,7 @@ void Reel::SearchSymbol(int index, int in_symbol)
 	reelData[index].slipCount = hit;
 
 
-	reelData[index].symbolIndex -= resultSymbol;
+	/*reelData[index].symbolIndex -= resultSymbol;
 
 	if (reelData[index].symbolIndex < 0)
 	{
@@ -449,7 +443,7 @@ void Reel::SearchSymbol(int index, int in_symbol)
 	if (reelData[index].symbolIndex > 20)
 	{
 		reelData[index].symbolIndex -= (int)reel.size();
-	}
+	}*/
 }
 
 void Reel::ScrollCheck(int index)
@@ -501,16 +495,16 @@ bool Reel::AllReelStop()
 
 int Reel::GetSymbolFrame(int frame)
 {
-	int num = -1;
+	int num = frame;
 
-	if (frame >= 0 && frame <= 5)
+	/*if(frame >= 0 && frame <= 5)
+
+	if (frame >= 6 && frame <= MAX_SYMBOL)
 	{
-		num = (5 - frame);
-	}
-	else if (frame >= 6 && frame <= MAX_SYMBOL)
-	{
-		num = (25 - frame);
-	}
+		num = (22 - frame);
+	}*/
+	 
+	num = (22 - frame);
 
 	if (num < 0)
 	{

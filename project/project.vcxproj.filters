@@ -322,7 +322,10 @@
     <MASM Include="Source\main\flagSymbol.asm">
       <Filter>PlayScene\main</Filter>
     </MASM>
-    <MASM Include="Source\main\SlotInput.asm">
+    <MASM Include="Source\main\slotInput.asm">
+      <Filter>PlayScene\main</Filter>
+    </MASM>
+    <MASM Include="Source\main\payout.asm">
       <Filter>PlayScene\main</Filter>
     </MASM>
   </ItemGroup>

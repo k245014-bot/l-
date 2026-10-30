@@ -119,6 +119,9 @@
     <ClCompile Include="Source\Common\CameraEditor\CameraEditor.cpp">
       <Filter>Common\CameraEditor</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Common\Motion\MotionManager.cpp">
+      <Filter>Common\Motion</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -258,6 +261,12 @@
     <ClInclude Include="Source\Common\CameraEditor\CameraEditor.h">
       <Filter>Common\CameraEditor</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Common\Motion\MotionManager.h">
+      <Filter>Common\Motion</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Motion\MotionId\MotionId.h">
+      <Filter>Common\Motion\MotionId</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -316,6 +325,12 @@
     </Filter>
     <Filter Include="Common\Object">
       <UniqueIdentifier>{769ba19a-4b2f-4bdc-9743-3cf3ac5f3ee0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Motion">
+      <UniqueIdentifier>{759e4b4c-2f99-4562-8fec-eb6d1e8e28ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Motion\MotionId">
+      <UniqueIdentifier>{a4c07109-fcbf-4d1a-a877-f9ee658bd228}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -164,6 +164,8 @@
     <ClInclude Include="Source\Common\csvReader.h" />
     <ClInclude Include="Source\Common\imageSynthesis.h" />
     <ClInclude Include="Source\Common\Input\inputManager.h" />
+    <ClInclude Include="Source\Common\Motion\MotionId\MotionId.h" />
+    <ClInclude Include="Source\Common\Motion\MotionManager.h" />
     <ClInclude Include="Source\Common\Object\collision.h" />
     <ClInclude Include="Source\Common\Object\object2D.h" />
     <ClInclude Include="Source\Common\Object\object3D.h" />
@@ -209,6 +211,7 @@
     <ClCompile Include="Source\Common\csvReader.cpp" />
     <ClCompile Include="Source\Common\imageSynthesis.cpp" />
     <ClCompile Include="Source\Common\Input\inputManager.cpp" />
+    <ClCompile Include="Source\Common\Motion\MotionManager.cpp" />
     <ClCompile Include="Source\Common\Object\collision.cpp" />
     <ClCompile Include="Source\Common\Object\object2D.cpp" />
     <ClCompile Include="Source\Common\Object\object3D.cpp" />

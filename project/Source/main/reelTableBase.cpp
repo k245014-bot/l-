@@ -42,7 +42,7 @@ int ReelTableBase::GetStopLine(int frames, int hitSymbol, int count)
 
 	for (const auto& itr : stopLines)
 	{
-		//“–‘I‚µ‚½¬–ð‚Ìcsv‚ª—ˆ‚é‚Ü‚Å‰ñ‚·
+		//Ž~‚ß‚½ƒŠ[ƒ‹‚Ì”Ô†‚Ü‚Å‰ñ‚·
 		if (itr.first != count)
 		{
 			continue;
@@ -104,20 +104,25 @@ int ReelTableBase::GetStopLine(int frames, int hitSymbol, int count)
 	//}
 }
 
-
-
-int ReelTableBase::GetStopLine(int frames, std::string index)
+int ReelTableBase::GetStopLine(int frames, int hitSymbol, int count, int prevCount)
 {
-	for (const auto& itr : otherStopLines)
+	for (const auto& itr : stopLines)
 	{
-		//“–‘I‚µ‚½¬–ð‚Ìcsv‚ª—ˆ‚é‚Ü‚Å‰ñ‚·
-		if (itr.first == index)
+		//Ž~‚ß‚½ƒŠ[ƒ‹‚Ì”Ô†‚Ü‚Å‰ñ‚·
+		if (itr.first != count)
 		{
-			return itr.second[frames][0];
+			continue;
 		}
-	
+
+		if (prevCount > 0)
+		{
+			return itr.second[hitSymbol * 2+1][frames];
+		}
+
+		return itr.second[hitSymbol * 2][frames];
 	}
 }
+
 
 void ReelTableBase::AddSecondLines(std::string filename)
 {

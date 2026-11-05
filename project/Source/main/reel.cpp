@@ -105,6 +105,7 @@ Reel::Reel(MainControl* data)
 	pushWaitTime = 0;
 	stopIndex = -1;
 	reachSymbol = -1;
+	previousStopIndex = -1;
 
 	GetGraphSize(hImage, nullptr, &reelH);
 
@@ -280,6 +281,7 @@ void Reel::Reset()
 	}
 
 	stopIndex = -1;
+	previousStopIndex = 0;
 }
 
 void Reel::Speen(int index)
@@ -431,6 +433,8 @@ void Reel::SearchSymbol(int index, int in_symbol)
 
 	////ääÇËêîÉZÉbÉg
 	reelData[index].slipCount = hit;
+
+	previousStopIndex = index;
 
 
 	/*reelData[index].symbolIndex -= resultSymbol;

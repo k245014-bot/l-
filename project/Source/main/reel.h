@@ -109,6 +109,7 @@ private:
 	int pushWaitTime;
 
 	int stopIndex;
+	int previousStopIndex;
 
 	int reachSymbol;
 

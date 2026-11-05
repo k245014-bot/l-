@@ -11,4 +11,10 @@ public:
 	void Draw()override;
 
 private:
+	const std::string fileName = "mao/mao2.mv1";
+
+	struct AnimationData
+	{
+		int dance;
+	};
 };

@@ -1,6 +1,6 @@
-#include "motionManager.h"
+#include "AnimationManager.h"
 
-MotionManager::MotionManager(const int& model)
+AnimationManager::AnimationManager(const int& model)
 {
     playingModel = model;
 	nowPlayMotion = -1;
@@ -12,12 +12,12 @@ MotionManager::MotionManager(const int& model)
     motionEndTime = 0;
 }
 
-MotionManager::~MotionManager()
+AnimationManager::~AnimationManager()
 {
 	MV1DeleteModel(playingModel);
 }
 
-void MotionManager::Update()
+void AnimationManager::Update()
 {
     if(nowPlayMotion == -1) 
         return;
@@ -45,7 +45,7 @@ void MotionManager::Update()
     MV1SetAttachAnimTime(playingModel, nowPlayMotion, motionTime);
 }
 
-void MotionManager::Play(const int& motionIndex, const int& _motionData, const float& _motionSpeed,const bool& _isLoop)
+void AnimationManager::Play(const int& motionIndex, const int& _motionData, const float& _motionSpeed,const bool& _isLoop)
 {
     // ìØÇ∂ÉÇÅ[ÉVÉáÉìÇ»ÇÁçƒê›íËÇµÇ»Ç¢
     if (currentMotion == motionIndex)

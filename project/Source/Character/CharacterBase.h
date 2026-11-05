@@ -1,8 +1,8 @@
 #pragma once
 #include "../Common/Object/object3D.h"
-#include "../Common/Motion/MotionManager.h"
+#include "../Common/Animation/AnimationManager.h"
 
-class MotionManager;
+class AnimationManager;
 
 class CharacterBase : public Object3D
 {
@@ -15,15 +15,11 @@ public:
 
 	const VECTOR3 GetPositon() { return data.position; }
 protected:
-	MotionManager* motionManager;
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <param name="_motionId"></param>
-	/// <param name="_playMotionName"></param>
-	/// <param name="_motionSpeed"></param>
-	/// <param name="_isMotionLoop"></param>
-	void MotionLoad(const int _motionId, const std::string& _playMotionName, const float& _motionSpeed, const bool& _isMotionLoop);
+	AnimationManager* animation;
+	//data/model/à»ç~ÇÃÉtÉ@ÉCÉãñºÇì¸ÇÍÇÈ
+	void LoadModel(const std::string& _hModelName);
+
+	void SetAnimation(const int _motionId, const std::string& _playMotionName, const float& _motionSpeed, const bool& _isMotionLoop);
 
 	int motionId;
 	int playMotion;

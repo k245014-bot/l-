@@ -2,11 +2,11 @@
 #include "../Object/objectBase.h"
 #include "vector"
 
-class MotionManager:public ObjectBase
+class AnimationManager:public ObjectBase
 {
 public:
-	MotionManager(const int& model);
-	~MotionManager();
+	AnimationManager(const int& model);
+	~AnimationManager();
 	void Update()override;
 	/// <summary>
 	/// ƒ‚[ƒVƒ‡ƒ“‚ğÄ¶‚·‚é

@@ -2,11 +2,10 @@
 
 Mao::Mao()
 {
-	hModel = MV1LoadModel("data/model/mao/mao2.mv1");
+	LoadModel(fileName);
 	data.position = VZero;
-	motionManager = new MotionManager(hModel);
-
-	MotionLoad(0, "data/model/mao/Motion/Dance.mv1", 30.0f, true);
+	animation = new AnimationManager(hModel);
+	SetAnimation(0, "data/model/mao/Motion/Dance.mv1", 30.0f, true);
 }
 
 Mao::~Mao()
@@ -15,7 +14,7 @@ Mao::~Mao()
 
 void Mao::Update()
 {
-	motionManager->Play(motionId, playMotion, motionSpeed, isMotionLoop);
+	animation->Play(motionId, playMotion, motionSpeed, isMotionLoop);
 }
 
 void Mao::Draw()

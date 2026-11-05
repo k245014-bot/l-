@@ -4,6 +4,8 @@
 #include "creditMedal.h"
 #include "time.h"
 
+extern "C" int GetSlotButtons();
+
 MainControl::MainControl()
 {
 	SetDrawOrder(110);
@@ -33,11 +35,48 @@ MainControl::~MainControl()
 void MainControl::Update()
 {
 
-	SetInput(Input_ID::BET, KEY_INPUT_X);
-	SetInput(Input_ID::LEVER, KEY_INPUT_SPACE);
-	SetInput(Input_ID::LEFT, KEY_INPUT_LEFT);
-	SetInput(Input_ID::MIDDLE, KEY_INPUT_DOWN);
-	SetInput(Input_ID::RIGHT, KEY_INPUT_RIGHT);
+	//SetInput(Input_ID::BET, KEY_INPUT_X);
+	//SetInput(Input_ID::LEVER, KEY_INPUT_SPACE);
+	//SetInput(Input_ID::LEFT, KEY_INPUT_LEFT);
+	//SetInput(Input_ID::MIDDLE, KEY_INPUT_DOWN);
+	//SetInput(Input_ID::RIGHT, KEY_INPUT_RIGHT);
+
+	int buttons = GetSlotButtons();
+
+	for (int i = 0; i < Input_ID::NUM; i++)
+	{
+		input[i].active = false;
+	}
+
+	if (input[Input_ID::BET].rock == false &&
+		(buttons & 1))
+	{
+		input[Input_ID::BET].active = true;
+	}
+
+	if (input[Input_ID::LEVER].rock == false &&
+		(buttons & 2))
+	{
+		input[Input_ID::LEVER].active = true;
+	}
+
+	if (input[Input_ID::LEFT].rock == false &&
+		(buttons & 4))
+	{
+		input[Input_ID::LEFT].active = true;
+	}
+
+	if (input[Input_ID::MIDDLE].rock == false &&
+		(buttons & 8))
+	{
+		input[Input_ID::MIDDLE].active = true;
+	}
+
+	if (input[Input_ID::RIGHT].rock == false &&
+		(buttons & 16))
+	{
+		input[Input_ID::RIGHT].active = true;
+	}
 
 	switch (state)
 	{
@@ -212,14 +251,14 @@ void MainControl::ResetUpdate()
 	state = Main_State::STAY;
 }
 
-void MainControl::SetInput(int index, int key)
-{
-	if (input[index].rock == true)
-	{
-		return;
-	}
-
-
-	input[index].active = CheckHitKey(key);
-
-}
+//void MainControl::SetInput(int index, int key)
+//{
+//	if (input[index].rock == true)
+//	{
+//		return;
+//	}
+//
+//
+//	input[index].active = CheckHitKey(key);
+//
+//}

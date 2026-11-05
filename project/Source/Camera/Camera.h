@@ -20,5 +20,5 @@ public:
 private:
 	Mao* mao;
 	//ÉJÉÅÉâÇÃà íuí≤êÆ
-	VECTOR3 CAMERA_OFFSET = VECTOR3(0.0f, 200.0f, -500.0f);
+	VECTOR3 CAMERA_OFFSET = VECTOR3(0.0f, 50.0f, -500.0f);
 };

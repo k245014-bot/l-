@@ -85,13 +85,13 @@ void InputManager::KeyBoardMove()//updata
 	mouseMoveY = mouseY - (int)mouseCopy.y;
 
 	// マウスポインタの位置を画面中央に設定する
-	if (mouseX <= (int)min.x || mouseX >= (int)max.x || mouseY <= (int)min.y || mouseY >= (int)max.y)
+	/*if (mouseX <= (int)min.x || mouseX >= (int)max.x || mouseY <= (int)min.y || mouseY >= (int)max.y)
 	{
 		SetMousePoint(MOUSE_OFFSET_X, MOUSE_OFFSET_Y);
 		mouseCopy = VECTOR2(MOUSE_OFFSET_X, MOUSE_OFFSET_Y);
 	}
 	else
-		mouseCopy = VECTOR2((float)mouseX, (float)mouseY);
+		mouseCopy = VECTOR2((float)mouseX, (float)mouseY);*/
 
 	//マウスの移動量を格納する。そのまま入れるとハイセンシ(感度が良）すぎるので割った数値を入れる
 	isKey.sickRX = (float)mouseMoveX / restraint;

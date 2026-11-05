@@ -16,7 +16,6 @@ void CharacterBase::Update()
 
 void CharacterBase::Draw()
 {
-	/*ObjectDraw();*/
 }
 
 void CharacterBase::MotionLoad(const int _motionId, const std::string& _playMotionName, const float& _motionSpeed, const bool& _isMotionLoop)

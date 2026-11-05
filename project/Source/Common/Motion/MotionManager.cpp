@@ -1,13 +1,4 @@
 #include "motionManager.h"
-//#include "../Library/gameObject.h"
-//#include "object3D.h"
-
-//MotionManager::MotionManager()
-//{
-//	playingModel = -1;
-//	nawPlayMotion = -1;
-//	motionSpeed = 0;
-//}
 
 MotionManager::MotionManager(const int& model)
 {

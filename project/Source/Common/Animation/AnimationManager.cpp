@@ -59,7 +59,7 @@ void AnimationManager::Play(const int& motionIndex, const int& _motionData, cons
         MV1DetachAnim(playingModel, nowPlayMotion);
     }
 
-    nowPlayMotion = MV1AttachAnim(playingModel, motionIndex, _motionData, true);
+    nowPlayMotion = MV1AttachAnim(playingModel, 0, _motionData);
 
     if (nowPlayMotion == -1) 
         return;

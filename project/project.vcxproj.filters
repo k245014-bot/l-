@@ -122,6 +122,18 @@
     <ClCompile Include="Source\Common\Animation\AnimationManager.cpp">
       <Filter>Common\Animation</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Character\State\StateManager.cpp">
+      <Filter>PlayScene\Character\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Character\Mao\State\MaoDanceState.cpp">
+      <Filter>PlayScene\Character\Mao\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Character\Mao\State\MaoDanceAtkState.cpp">
+      <Filter>PlayScene\Character\Mao\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Character\Mao\State\Base\MaoStateBase.cpp">
+      <Filter>PlayScene\Character\Mao\State\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -264,6 +276,24 @@
     <ClInclude Include="Source\Common\Animation\AnimationManager.h">
       <Filter>Common\Animation</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Character\State\StateManager.h">
+      <Filter>PlayScene\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Character\State\StateBase.h">
+      <Filter>PlayScene\Character\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Character\Mao\MaoStateData.h">
+      <Filter>PlayScene\Character\Mao</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Character\Mao\State\MaoDanceAtkState.h">
+      <Filter>PlayScene\Character\Mao\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Character\Mao\State\MaoDanceState.h">
+      <Filter>PlayScene\Character\Mao\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Character\Mao\State\Base\MaoStateBase.h">
+      <Filter>PlayScene\Character\Mao\State\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -299,9 +329,6 @@
     <Filter Include="PlayScene\Character">
       <UniqueIdentifier>{871ac396-d151-4180-bc83-81c30230da80}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PlayScene\Character\Mao">
-      <UniqueIdentifier>{a1f74c61-15e5-439e-ab6a-56393e93b1e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="PlayScene\Stage">
       <UniqueIdentifier>{08bf3804-5939-4c01-af05-35799563df1f}</UniqueIdentifier>
     </Filter>
@@ -325,6 +352,18 @@
     </Filter>
     <Filter Include="Common\Animation">
       <UniqueIdentifier>{759e4b4c-2f99-4562-8fec-eb6d1e8e28ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Character\State">
+      <UniqueIdentifier>{c359a800-d3cf-4180-a6bc-54ae4ca657f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Character\Mao">
+      <UniqueIdentifier>{a1f74c61-15e5-439e-ab6a-56393e93b1e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Character\Mao\State">
+      <UniqueIdentifier>{2b473661-4fb9-4a0d-b8e5-5718a4e77abd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Character\Mao\State\Base">
+      <UniqueIdentifier>{7c9fc2b0-4606-4a83-bf11-ef8ae2d0fdfa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

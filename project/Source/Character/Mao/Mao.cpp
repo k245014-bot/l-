@@ -1,5 +1,6 @@
 #include "Mao.h"
 #include "../../../ImGui/imgui.h"
+#include "../State/StateManager.h"
 
 Mao::Mao()
 {
@@ -9,9 +10,12 @@ Mao::Mao()
 	LoadAnim(animData.dance, "data/model/mao/Motion/Dance.mv1");
 	LoadAnim(animData.attack, "data/model/mao/Motion/Attack.mv1");
 	
-	SetAnimation(0, animData.dance, 30.0f, true);
-	//SetAnimation(1, animData.attack, 40.0f, true);
+	state = new StateManager;
+	stateData.dance = new MaoDanceState();
+	stateData.danceAtk = new MaoDanceAtkState();
+	
 
+	state->ChangeState(stateData.dance);
 }
 
 Mao::~Mao()
@@ -33,9 +37,9 @@ void Mao::ImGuiDraw()
 	ImGui::Begin("CameraEditor");
 
 	if (ImGui::Button("DanceAnim"))
-		SetAnimation(0, animData.dance, 30.0f, true);
+		state->ChangeState(stateData.dance);
 	if (ImGui::Button("AtkAnim"))
-		SetAnimation(1, animData.attack, 40.0f, false);
+		state->ChangeState(stateData.danceAtk);
 	/*
 	if (ImGui::Button("enemySpwn"))
 		CreateEnemy(VZero, 1, 0);

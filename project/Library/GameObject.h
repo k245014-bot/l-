@@ -9,6 +9,8 @@
 #include "ObjectManager.h"
 #include "SceneManager.h"
 #include "Time.h"
+#include <memory>
+#include <vector>
 
 /// <summary>
 /// これを継承したクラスのインスタンスは、ObjectManagerで管理され、

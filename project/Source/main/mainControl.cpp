@@ -21,6 +21,21 @@ MainControl::MainControl()
 		input[i].setKey = -1;
 	}
 
+	orderIndex[PressOrder::MLR][0] = 2;
+	orderIndex[PressOrder::MLR][1] = 1;
+	orderIndex[PressOrder::MLR][2] = 3;
+
+	orderIndex[PressOrder::MRL][0] = 3;
+	orderIndex[PressOrder::MRL][1] = 1;
+	orderIndex[PressOrder::MRL][2] = 2;
+
+	orderIndex[PressOrder::RLM][0] = 2;
+	orderIndex[PressOrder::RLM][1] = 3;
+	orderIndex[PressOrder::RLM][2] = 1;
+
+	orderIndex[PressOrder::RML][0] = 3;
+	orderIndex[PressOrder::RML][1] = 2;
+	orderIndex[PressOrder::RML][2] = 1;
 }
 
 MainControl::~MainControl()
@@ -87,6 +102,11 @@ void MainControl::Update()
 
 void MainControl::Draw()
 {
+}
+
+int MainControl::CorrectPressOrder(int order, int index)
+{
+	return orderIndex[order][index];
 }
 
 bool MainControl::GetAllPush()

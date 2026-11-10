@@ -21,7 +21,9 @@ public:
 	std::map<int, std::vector<std::vector<int>>> GetSecondLines() { return secondStopLines; }
 
 	int GetStopLine(int frames, int hitSymbol, int count);
-	int GetStopLine(int frames, int hitSymbol, int count,int prevCount);
+	int GetStopLine(int frames,int count);
+
+	int GetOrderStopLine(int frames, int hitSymbol, int count, int correctOrder);
 
 	void AddSecondLines(std::string filename);
 	void AddThirdLines(std::string filename);

@@ -106,6 +106,8 @@ Reel::Reel(MainControl* data)
 	stopIndex = -1;
 	reachSymbol = -1;
 	previousStopIndex = -1;
+	firstStopIndex = -1;
+	orderMissCount = -1;
 
 	GetGraphSize(hImage, nullptr, &reelH);
 
@@ -113,6 +115,12 @@ Reel::Reel(MainControl* data)
 	reelTable[Reel_ID::MIDDLE] = new ReelTableBase("data/csv/table/middle/%02d.csv");
 	reelTable[Reel_ID::RIGHT] = new ReelTableBase("data/csv/table/right/%02d.csv");
 
+	orderTable[Reel_ID::LEFT] = new ReelTableBase("data/csv/table/order/left/%02d.csv");
+	orderTable[Reel_ID::MIDDLE] = new ReelTableBase("data/csv/table/order/middle/%02d.csv");
+	orderTable[Reel_ID::RIGHT] = new ReelTableBase("data/csv/table/order/right/%02d.csv");
+
+	OrderMissTable[0] = new ReelTableBase("data/csv/table/order/miss/first/%02d.csv");
+	OrderMissTable[1] = new ReelTableBase("data/csv/table/order/miss/second/%02d.csv");
 
 	reelCover = LoadGraph("data/texture/reelBuller.png");
 }
@@ -125,6 +133,7 @@ Reel::~Reel()
 	for (int i = 0; i < Reel_ID::ID_NUM; i++)
 	{
 		delete reelTable[i];
+		delete orderTable[i];
 	}
 }
 
@@ -281,7 +290,9 @@ void Reel::Reset()
 	}
 
 	stopIndex = -1;
+	firstStopIndex = -1;
 	previousStopIndex = 0;
+	orderMissCount = -1;
 }
 
 void Reel::Speen(int index)
@@ -413,7 +424,37 @@ void Reel::SearchSymbol(int index, int in_symbol)
 	//‰Ÿ‚µ‚½‡”Ô
 	stopIndex++;
 
-	hit = reelTable[index]->GetStopLine(reelData[index].symbolIndex, hitSymbol, stopIndex);
+
+	//‰Ÿ‚µ‡¬–ð‚ðˆø‚¢‚½ê‡
+	if (hitSymbol >= 10)
+	{
+		//csv‚Å“Ç‚Ýž‚Þˆ×‚É’l‚ð¬‚³‚­
+		int symbol = hitSymbol - 10;
+
+		hit = orderTable[index]->GetOrderStopLine(reelData[index].symbolIndex, symbol, stopIndex, mainData->CorrectPressOrder(symbol,index));
+
+		
+
+		if (hit == -1 || orderMissCount > -1)
+		{
+
+			if (orderMissCount < 0)
+			{
+				orderMissCount = stopIndex;
+			}
+
+			hit = OrderMissTable[orderMissCount]->GetStopLine(reelData[index].symbolIndex, index);
+		}
+	}
+	else
+	{
+		hit = reelTable[index]->GetStopLine(reelData[index].symbolIndex, hitSymbol, stopIndex);
+
+	}
+	
+
+	if (stopIndex < 1)
+		firstStopIndex = index;
 
 	int inSymbol = reelData[index].symbolIndex - hit;
 

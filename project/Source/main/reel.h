@@ -50,6 +50,8 @@ private:
 	MainControl* mainData;
 	Random* rand;
 	ReelTableBase* reelTable[Reel_ID::ID_NUM];
+	ReelTableBase* orderTable[Reel_ID::ID_NUM];
+	ReelTableBase* OrderMissTable[Reel_ID::ID_NUM];
 
 	std::vector<std::vector<int>> reel;
 	std::vector<std::vector<int>> symbol;
@@ -110,10 +112,14 @@ private:
 
 	int stopIndex;
 	int previousStopIndex;
+	int firstStopIndex;
 
 	int reachSymbol;
 
 	int reelCover;
+
+	//‰½”Ô–Ú‚Ì‰Ÿ‚µ‡‚ÅŠÔˆá‚¦‚½‚©
+	int orderMissCount;
 
 	void Reset();
 	void Speen(int index);

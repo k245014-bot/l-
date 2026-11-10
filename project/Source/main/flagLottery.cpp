@@ -88,6 +88,8 @@ void FlagLottery::SetRand()
 	}
 
 	hit = ID::BELL_ORDER_A;
+
+	//hit = ID::BELL;
 }
 
 void FlagLottery::SymbolReset()

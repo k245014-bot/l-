@@ -104,22 +104,45 @@ int ReelTableBase::GetStopLine(int frames, int hitSymbol, int count)
 	//}
 }
 
-int ReelTableBase::GetStopLine(int frames, int hitSymbol, int count, int prevCount)
+int ReelTableBase::GetStopLine(int frames, int count)
 {
 	for (const auto& itr : stopLines)
 	{
+		if (itr.first != count)
+		{
+			continue;
+		}
+
+		return itr.second[0][frames];
+	}
+}
+
+
+int ReelTableBase::GetOrderStopLine(int frames, int hitSymbol, int count, int correctOrder)
+{
+
+	//必要な情報
+	//押し順の正解パターン
+	//ミスしたら1枚役を揃えるように制御を動かす
+
+	int num = count + 1;
+
+	for (const auto& itr : stopLines)
+	{
+
 		//止めたリールの番号まで回す
 		if (itr.first != count)
 		{
 			continue;
 		}
 
-		if (prevCount > 0)
+		//押し順が正解していなければ
+		if (num != correctOrder)
 		{
-			return itr.second[hitSymbol * 2+1][frames];
+			return  -1;
 		}
 
-		return itr.second[hitSymbol * 2][frames];
+		return itr.second[hitSymbol][frames];
 	}
 }
 

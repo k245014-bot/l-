@@ -1,15 +1,6 @@
-#include "motionManager.h"
-//#include "../Library/gameObject.h"
-//#include "object3D.h"
+#include "AnimationManager.h"
 
-//MotionManager::MotionManager()
-//{
-//	playingModel = -1;
-//	nawPlayMotion = -1;
-//	motionSpeed = 0;
-//}
-
-MotionManager::MotionManager(const int& model)
+AnimationManager::AnimationManager(const int& model)
 {
     playingModel = model;
 	nowPlayMotion = -1;
@@ -21,12 +12,12 @@ MotionManager::MotionManager(const int& model)
     motionEndTime = 0;
 }
 
-MotionManager::~MotionManager()
+AnimationManager::~AnimationManager()
 {
 	MV1DeleteModel(playingModel);
 }
 
-void MotionManager::Update()
+void AnimationManager::Update()
 {
     if(nowPlayMotion == -1) 
         return;
@@ -54,7 +45,7 @@ void MotionManager::Update()
     MV1SetAttachAnimTime(playingModel, nowPlayMotion, motionTime);
 }
 
-void MotionManager::Play(const int& motionIndex, const int& _motionData, const float& _motionSpeed,const bool& _isLoop)
+void AnimationManager::Play(const int& motionIndex, const int& _motionData, const float& _motionSpeed,const bool& _isLoop)
 {
     // ìØÇ∂ÉÇÅ[ÉVÉáÉìÇ»ÇÁçƒê›íËÇµÇ»Ç¢
     if (currentMotion == motionIndex)
@@ -68,7 +59,7 @@ void MotionManager::Play(const int& motionIndex, const int& _motionData, const f
         MV1DetachAnim(playingModel, nowPlayMotion);
     }
 
-    nowPlayMotion = MV1AttachAnim(playingModel, motionIndex, _motionData, true);
+    nowPlayMotion = MV1AttachAnim(playingModel, 0, _motionData);
 
     if (nowPlayMotion == -1) 
         return;

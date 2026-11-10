@@ -2,12 +2,19 @@
 #include "../Object/objectBase.h"
 #include "vector"
 
-class MotionManager:public ObjectBase
+class AnimationManager:public ObjectBase
 {
 public:
-	MotionManager(const int& model);
-	~MotionManager();
+	AnimationManager(const int& model);
+	~AnimationManager();
 	void Update()override;
+	/// <summary>
+	/// モーションを再生する
+	/// </summary>
+	/// <param name="motionIndex">同じIDだった場合アタッチしないようにする</param>
+	/// <param name="_motionData">再生したいモーションのデータを入れる</param>
+	/// <param name="_motionSpeed">モーションの再生速度の設定</param>
+	/// <param name="_isLoop">モーションをループするかどうか</param>
 	void Play(const int& motionIndex, const int& _motionData,const float& _motionSpeed, const bool& _isLoop);
 	
 private:

@@ -2,130 +2,219 @@
 EXTERN GetAsyncKeyState:PROC
 
 .data
-prevX     DWORD 0
-prevSpace DWORD 0
-prevLeft  DWORD 0
-prevDown  DWORD 0
-prevRight DWORD 0
+
+; 前回のキー状態
+prevX       DWORD 0
+prevSpace   DWORD 0
+prevLeft    DWORD 0
+prevDown    DWORD 0
+prevRight   DWORD 0
 
 .code
 
-; 戻り値 EAX のビット
-; bit 0 (1)  = Xキー：MAX BET
-; bit 1 (2)  = SPACE：レバー
-; bit 2 (4)  = LEFT：左停止
-; bit 3 (8)  = DOWN：中停止
-; bit 4 (16) = RIGHT：右停止
+PUBLIC GetSlotButtons
+
+; ============================================================
+; GetSlotButtons
 ;
-; 押した瞬間だけ、対応するビットを1にする
+; 戻り値 EAX
+;
+; bit 0 = MAXベット (X)
+; bit 1 = レバー (SPACE)
+; bit 2 = 左ストップ (LEFT)
+; bit 3 = 中ストップ (DOWN)
+; bit 4 = 右ストップ (RIGHT)
+;
+; 同時押し対策：
+; ・ストップボタン同士の同時押しは禁止
+; ・ストップボタンが1つだけなら最優先
+; ・複数のストップボタンが押された場合は全て無効
+; ・その場合、レバー → MAXベットの順に判定
+; ・長押しでは連続判定しない
+; ============================================================
 
 GetSlotButtons PROC
+
     push rbx
     sub rsp, 20h
 
     xor ebx, ebx
 
-    ; -------------------------
-    ; Xキー：MAX BET
-    ; -------------------------
+; ------------------------------------------------------------
+; Xキー
+; ------------------------------------------------------------
+
     mov ecx, 58h
     call GetAsyncKeyState
 
-    xor edx, edx
     test ax, 8000h
-    setnz dl
+    jz X_RELEASED
 
-    cmp dword ptr [prevX], 0
-    jne x_store
-    test edx, edx
-    jz x_store
+    cmp prevX, 0
+    jne X_END
+
+    mov prevX, 1
     or ebx, 1
+    jmp X_END
 
-x_store:
-    mov dword ptr [prevX], edx
+X_RELEASED:
+    mov prevX, 0
 
-    ; -------------------------
-    ; SPACE：レバー
-    ; -------------------------
+X_END:
+
+; ------------------------------------------------------------
+; SPACEキー
+; ------------------------------------------------------------
+
     mov ecx, 20h
     call GetAsyncKeyState
 
-    xor edx, edx
     test ax, 8000h
-    setnz dl
+    jz SPACE_RELEASED
 
-    cmp dword ptr [prevSpace], 0
-    jne space_store
-    test edx, edx
-    jz space_store
+    cmp prevSpace, 0
+    jne SPACE_END
+
+    mov prevSpace, 1
     or ebx, 2
+    jmp SPACE_END
 
-space_store:
-    mov dword ptr [prevSpace], edx
+SPACE_RELEASED:
+    mov prevSpace, 0
 
-    ; -------------------------
-    ; LEFT：左停止
-    ; -------------------------
+SPACE_END:
+
+; ------------------------------------------------------------
+; LEFTキー
+; ------------------------------------------------------------
+
     mov ecx, 25h
     call GetAsyncKeyState
 
-    xor edx, edx
     test ax, 8000h
-    setnz dl
+    jz LEFT_RELEASED
 
-    cmp dword ptr [prevLeft], 0
-    jne left_store
-    test edx, edx
-    jz left_store
+    cmp prevLeft, 0
+    jne LEFT_END
+
+    mov prevLeft, 1
     or ebx, 4
+    jmp LEFT_END
 
-left_store:
-    mov dword ptr [prevLeft], edx
+LEFT_RELEASED:
+    mov prevLeft, 0
 
-    ; -------------------------
-    ; DOWN：中停止
-    ; -------------------------
+LEFT_END:
+
+; ------------------------------------------------------------
+; DOWNキー
+; ------------------------------------------------------------
+
     mov ecx, 28h
     call GetAsyncKeyState
 
-    xor edx, edx
     test ax, 8000h
-    setnz dl
+    jz DOWN_RELEASED
 
-    cmp dword ptr [prevDown], 0
-    jne down_store
-    test edx, edx
-    jz down_store
+    cmp prevDown, 0
+    jne DOWN_END
+
+    mov prevDown, 1
     or ebx, 8
+    jmp DOWN_END
 
-down_store:
-    mov dword ptr [prevDown], edx
+DOWN_RELEASED:
+    mov prevDown, 0
 
-    ; -------------------------
-    ; RIGHT：右停止
-    ; -------------------------
+DOWN_END:
+
+; ------------------------------------------------------------
+; RIGHTキー
+; ------------------------------------------------------------
+
     mov ecx, 27h
     call GetAsyncKeyState
 
-    xor edx, edx
     test ax, 8000h
-    setnz dl
+    jz RIGHT_RELEASED
 
-    cmp dword ptr [prevRight], 0
-    jne right_store
-    test edx, edx
-    jz right_store
+    cmp prevRight, 0
+    jne RIGHT_END
+
+    mov prevRight, 1
     or ebx, 16
+    jmp RIGHT_END
 
-right_store:
-    mov dword ptr [prevRight], edx
+RIGHT_RELEASED:
+    mov prevRight, 0
 
-    ; 検出したボタン一覧を返す
+RIGHT_END:
+
+; ============================================================
+; 同時押しチェック
+; ============================================================
+
+    ; ストップボタンの入力だけ取り出す
+    mov eax, ebx
+    and eax, 1Ch
+
+    ; 2進数で1ビットだけ立っているか確認
+    ; x & (x - 1) が0でなければ複数入力
+    mov edx, eax
+    dec edx
+    and edx, eax
+    jnz MULTI_STOP
+
+    ; ストップボタンが1つだけなら優先して返す
+    test eax, eax
+    jnz RETURN_INPUT
+
+    ; ストップボタンがなければレバーを確認
+    test ebx, 2
+    jnz RETURN_SPACE
+
+    ; 次にMAXベットを確認
+    test ebx, 1
+    jnz RETURN_X
+
+    ; 入力なし
+    jmp RETURN_INPUT
+
+
+MULTI_STOP:
+
+    ; ストップボタンが複数なら全て無効にする
+    and ebx, 0FFFFFFE3h
+
+    ; レバーを優先
+    test ebx, 2
+    jnz RETURN_SPACE
+
+    ; 次にMAXベット
+    test ebx, 1
+    jnz RETURN_X
+
+    ; 有効な入力なし
+    jmp RETURN_INPUT
+
+
+RETURN_SPACE:
+    mov ebx, 2
+    jmp RETURN_INPUT
+
+RETURN_X:
+    mov ebx, 1
+
+
+RETURN_INPUT:
+
     mov eax, ebx
 
     add rsp, 20h
     pop rbx
+
     ret
+
 GetSlotButtons ENDP
 
 END

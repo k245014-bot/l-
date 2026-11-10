@@ -119,8 +119,8 @@
     <ClCompile Include="Source\Common\CameraEditor\CameraEditor.cpp">
       <Filter>Common\CameraEditor</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Common\Motion\MotionManager.cpp">
-      <Filter>Common\Motion</Filter>
+    <ClCompile Include="Source\Common\Animation\AnimationManager.cpp">
+      <Filter>Common\Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -261,8 +261,8 @@
     <ClInclude Include="Source\Common\CameraEditor\CameraEditor.h">
       <Filter>Common\CameraEditor</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Common\Motion\MotionManager.h">
-      <Filter>Common\Motion</Filter>
+    <ClInclude Include="Source\Common\Animation\AnimationManager.h">
+      <Filter>Common\Animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -323,7 +323,7 @@
     <Filter Include="Common\Object">
       <UniqueIdentifier>{769ba19a-4b2f-4bdc-9743-3cf3ac5f3ee0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Common\Motion">
+    <Filter Include="Common\Animation">
       <UniqueIdentifier>{759e4b4c-2f99-4562-8fec-eb6d1e8e28ae}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

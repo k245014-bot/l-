@@ -337,5 +337,8 @@
     <MASM Include="Source\main\payout.asm">
       <Filter>PlayScene\main</Filter>
     </MASM>
+    <MASM Include="Source\main\makonLottery.asm">
+      <Filter>PlayScene\main</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

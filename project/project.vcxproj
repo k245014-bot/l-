@@ -233,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="Source\main\flagSymbol.asm" />
+    <MASM Include="Source\main\makonLottery.asm" />
     <MASM Include="Source\main\payout.asm" />
     <MASM Include="Source\main\slotInput.asm" />
   </ItemGroup>

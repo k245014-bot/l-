@@ -224,13 +224,13 @@ void MainControl::StartUpdate()
 
 void MainControl::WaitUpdate()
 {
-	waitTime += Time::DeltaTime();
+	/*waitTime += Time::DeltaTime();
 	float rate = waitTime / WAIT_MAX;
 
 	if (rate < 1.0f)
 	{
 		return;
-	}
+	}*/
 
 	input[Input_ID::LEFT].rock = false;
 	input[Input_ID::MIDDLE].rock = false;

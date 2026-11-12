@@ -87,7 +87,7 @@ void FlagLottery::SetRand()
 		ratio += itr.second;
 	}
 
-	hit = ID::BELL_ORDER_A;
+	hit = ID::CHERRY_A_STRONG;
 
 	//hit = ID::BELL;
 }

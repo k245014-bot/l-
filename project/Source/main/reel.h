@@ -56,6 +56,7 @@ private:
 	std::vector<std::vector<int>> reel;
 	std::vector<std::vector<int>> symbol;
 	std::map<int, int> symbolHandle;
+	
 	std::map<int, std::vector<std::vector<int>>> hitSymbolLines;
 
 	std::map<int, std::vector<int>> reachLine;
@@ -112,7 +113,6 @@ private:
 
 	int stopIndex;
 	int previousStopIndex;
-	int firstStopIndex;
 
 	int reachSymbol;
 
@@ -140,6 +140,7 @@ private:
 
 	int GetSymbolFrame(int frame);
 
+	bool HitSymbolCheck();
 
 };
 

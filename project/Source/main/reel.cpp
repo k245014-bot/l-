@@ -35,9 +35,9 @@ Reel::Reel(MainControl* data)
 
 
 
-	/*for (int i = 0; i < MAX_LINE; i++)
+	for (int i = 0; i < 10; i++)
 	{
-		sprintf_s<40>(filename, "data/csv/hitLine/%02d.csv", i + 1);
+		sprintf_s<40>(filename, "data/csv/line/%02d.csv", i + 1);
 		csv->AddFaile(filename);
 
 		for (int y = 0; y < csv->GetLines(); y++)
@@ -52,7 +52,9 @@ Reel::Reel(MainControl* data)
 			hitSymbolLines[i].push_back(line);
 		}
 
-	}*/
+	}
+
+	hitSymbolLines;
 
 	is = new ImageSynthesis;
 	rand = new Random;
@@ -64,11 +66,11 @@ Reel::Reel(MainControl* data)
 	GetGraphSize(line, &imageW, &imageH);
 
 	//çáÇÌÇπÇÈâÊëú
-	symbolHandle.emplace(1, LoadGraph("data/texture/maobell_06.png"));
+	symbolHandle.emplace(1, LoadGraph("data/texture/maobell_08.png"));
 	symbolHandle.emplace(2, LoadGraph("data/texture/replay.png"));
-	symbolHandle.emplace(3, LoadGraph("data/texture/suica_ver1.1.png"));
+	symbolHandle.emplace(3, LoadGraph("data/texture/suika04.png"));
 	symbolHandle.emplace(4, LoadGraph("data/texture/cherry.png"));
-	symbolHandle.emplace(5, LoadGraph("data/texture/blank.png"));
+	symbolHandle.emplace(5, LoadGraph("data/texture/macon.png"));
 	symbolHandle.emplace(6, LoadGraph("data/texture/bar_3.png"));
 	symbolHandle.emplace(7, LoadGraph("data/texture/red_7.png"));
 	symbolHandle.emplace(8, LoadGraph("data/texture/maseki.png"));
@@ -106,7 +108,6 @@ Reel::Reel(MainControl* data)
 	stopIndex = -1;
 	reachSymbol = -1;
 	previousStopIndex = -1;
-	firstStopIndex = -1;
 	orderMissCount = -1;
 
 	GetGraphSize(hImage, nullptr, &reelH);
@@ -200,8 +201,11 @@ void Reel::Update()
 
 	case MainControl::Main_State::RESULT:
 
-		mainData->SymbolAligned();
 
+		if (HitSymbolCheck()== true)
+		{
+			mainData->SymbolAligned();
+		}
 		mainData->ResetCheck();
 
 		Reset();
@@ -290,7 +294,6 @@ void Reel::Reset()
 	}
 
 	stopIndex = -1;
-	firstStopIndex = -1;
 	previousStopIndex = 0;
 	orderMissCount = -1;
 }
@@ -433,8 +436,6 @@ void Reel::SearchSymbol(int index, int in_symbol)
 
 		hit = orderTable[index]->GetOrderStopLine(reelData[index].symbolIndex, symbol, stopIndex, mainData->CorrectPressOrder(symbol,index));
 
-		
-
 		if (hit == -1 || orderMissCount > -1)
 		{
 
@@ -453,42 +454,12 @@ void Reel::SearchSymbol(int index, int in_symbol)
 	}
 	
 
-	if (stopIndex < 1)
-		firstStopIndex = index;
-
-	int inSymbol = reelData[index].symbolIndex - hit;
-
-	if (inSymbol < 0)
-	{
-		inSymbol += (int)reel.size();
-	}
-
-	if (inSymbol > 20)
-	{
-		inSymbol -= (int)reel.size();
-	}
-
-
-	int resultSymbol = hit;
-
 
 	////ääÇËêîÉZÉbÉg
 	reelData[index].slipCount = hit;
 
 	previousStopIndex = index;
 
-
-	/*reelData[index].symbolIndex -= resultSymbol;
-
-	if (reelData[index].symbolIndex < 0)
-	{
-		reelData[index].symbolIndex += (int)reel.size();
-	}
-
-	if (reelData[index].symbolIndex > 20)
-	{
-		reelData[index].symbolIndex -= (int)reel.size();
-	}*/
 }
 
 void Reel::ScrollCheck(int index)
@@ -561,4 +532,84 @@ int Reel::GetSymbolFrame(int frame)
 	}
 
 	return num;
+}
+
+bool Reel::HitSymbolCheck()
+{
+	if (hitSymbol == -1)
+	{
+		return false;
+	}
+
+	bool hit[Reel_ID::ID_NUM];
+
+	for (int i = 0; i < Reel_ID::ID_NUM; i++)
+	{
+		hit[i] = false;
+	}
+
+	for (const auto& itr : hitSymbolLines)
+	{
+		if (itr.first != hitSymbol - 1)
+		{
+			continue;
+		}
+
+		/*for (int i = 0; i < Reel_ID::ID_NUM; i++)
+		{
+			int lineIndex = i;
+
+			if (i < 1)
+			{
+				lineIndex = 1;
+			}
+
+			int num = itr.second[i][i];
+			int num2 = reel[i][lineIndex];
+
+			if (num == num2)
+			{
+				hit[i] = true;
+			}
+		}*/
+
+
+		for (int y = 0; y < Reel_ID::ID_NUM; y++)
+		{
+			int lineIndex = y;
+
+			if (y < 1)
+			{
+				lineIndex = 1;
+			}
+
+			for (int x = 0; x < reel[y].size(); x++)
+			{
+
+				int num = itr.second[x][y];
+
+				int num2 = reel[lineIndex][y];
+
+				if (num == num2)
+				{
+					hit[y] = true;
+					break;
+				}
+
+			}
+
+		}
+
+		if (hit[Reel_ID::LEFT] == true &&
+			hit[Reel_ID::MIDDLE] == true &&
+			hit[Reel_ID::RIGHT] == true)
+		{
+			return true;
+
+		}
+
+	}
+
+
+	return false;
 }

@@ -247,6 +247,9 @@ void Reel::Draw()
 			DrawFormatString(x * 40, y * 20 + 100, GetColor(255, 255, 255), "%2d", reel[y][x]);
 		}
 	}
+
+	DrawFormatString(700,  100, GetColor(255, 255, 255), "%2d", hitSymbol);
+
 }
 
 void Reel::SetPush(int index, bool active)
@@ -541,6 +544,13 @@ bool Reel::HitSymbolCheck()
 		return false;
 	}
 
+	int symbol = hitSymbol;
+
+	if (hitSymbol > 10)
+	{
+		symbol = 10;
+	}
+
 	bool hit[Reel_ID::ID_NUM];
 
 	for (int i = 0; i < Reel_ID::ID_NUM; i++)
@@ -550,29 +560,10 @@ bool Reel::HitSymbolCheck()
 
 	for (const auto& itr : hitSymbolLines)
 	{
-		if (itr.first != hitSymbol - 1)
+		if (itr.first != symbol - 1)
 		{
 			continue;
 		}
-
-		/*for (int i = 0; i < Reel_ID::ID_NUM; i++)
-		{
-			int lineIndex = i;
-
-			if (i < 1)
-			{
-				lineIndex = 1;
-			}
-
-			int num = itr.second[i][i];
-			int num2 = reel[i][lineIndex];
-
-			if (num == num2)
-			{
-				hit[i] = true;
-			}
-		}*/
-
 
 		for (int y = 0; y < Reel_ID::ID_NUM; y++)
 		{
@@ -583,7 +574,7 @@ bool Reel::HitSymbolCheck()
 				lineIndex = 1;
 			}
 
-			for (int x = 0; x < reel[y].size(); x++)
+			for (int x = 0; x < itr.second.size(); x++)
 			{
 
 				int num = itr.second[x][y];

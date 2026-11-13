@@ -28,7 +28,19 @@ FlagLottery::FlagLottery()
 
 	//ベルの乱数
 	priority.emplace(Rand_ID::R_BELL, round(BELLA_RAND));
+
+	//押し順ベルAの乱数
+	priority.emplace(Rand_ID::R_BELL_ORDER_A, round(BELL_ORDER_RAND));
 	
+	//押し順ベルBの乱数
+	priority.emplace(Rand_ID::R_BELL_ORDER_B, round(BELL_ORDER_RAND));
+
+	//押し順ベルCの乱数
+	priority.emplace(Rand_ID::R_BELL_ORDER_C, round(BELL_ORDER_RAND));
+
+	//押し順ベルDの乱数
+	priority.emplace(Rand_ID::R_BELL_ORDER_D, round(BELL_ORDER_RAND));
+
 
 	hit = 0;
 
@@ -58,6 +70,10 @@ FlagLottery::FlagLottery()
 	hitSymbol.emplace(Rand_ID::R_CHERRY_B_STRONG, ID::CHERRY_B_STRONG);
 	hitSymbol.emplace(Rand_ID::R_CHANCE, ID::CHANCE);
 	hitSymbol.emplace(Rand_ID::R_CHANCE_REPLAY, ID::CHANCE_REPLAY);
+	hitSymbol.emplace(Rand_ID::R_BELL_ORDER_A, ID::BELL_ORDER_A);
+	hitSymbol.emplace(Rand_ID::R_BELL_ORDER_B, ID::BELL_ORDER_B);
+	hitSymbol.emplace(Rand_ID::R_BELL_ORDER_C, ID::BELL_ORDER_C);
+	hitSymbol.emplace(Rand_ID::R_BELL_ORDER_D, ID::BELL_ORDER_D);
 }
 
 FlagLottery::~FlagLottery()
@@ -87,7 +103,7 @@ void FlagLottery::SetRand()
 		ratio += itr.second;
 	}
 
-	hit = ID::CHERRY_A_STRONG;
+	//hit = ID::CHERRY_A_STRONG;
 
 	//hit = ID::BELL;
 }

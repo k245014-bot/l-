@@ -15,7 +15,8 @@ MainControl::MainControl()
 	count = 0;
 	state = Main_State::STAY;
 	betSkip = false;
-	
+	waitTime = 0;
+
 	for (int i = 0; i < Input_ID::NUM; i++)
 	{
 		input[i].active = false;
@@ -141,6 +142,7 @@ void MainControl::Update()
 
 void MainControl::Draw()
 {
+	//DrawFormatString(800, 100, GetColor(255, 255, 255), "% d", flag->GetSymbol());
 }
 
 int MainControl::CorrectPressOrder(int order, int index)

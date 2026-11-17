@@ -9,7 +9,10 @@ SubBManager::SubBManager()
 	mao = new Mao;
     new Stage;
     cameraManager = new ScreenManager;
-    housingImage = LoadGraph("data/texture/Sammy_Heiwa_ver1.0.png");
+
+
+   housingImage = LoadGraph("data/texture/Sammy_Heiwa_ver1.0.png");
+
 }
 
 SubBManager::~SubBManager()

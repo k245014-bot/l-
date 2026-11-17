@@ -169,6 +169,8 @@
     <ClInclude Include="Source\Common\Animation\AnimationManager.h" />
     <ClInclude Include="Source\Common\CameraEditor\CameraEditor.h" />
     <ClInclude Include="Source\Common\csvReader.h" />
+    <ClInclude Include="Source\Common\Effect\effectBase.h" />
+    <ClInclude Include="Source\Common\Effect\effectManager.h" />
     <ClInclude Include="Source\Common\imageSynthesis.h" />
     <ClInclude Include="Source\Common\Input\inputManager.h" />
     <ClInclude Include="Source\Common\Object\collision.h" />
@@ -219,6 +221,8 @@
     <ClCompile Include="Source\Common\Animation\AnimationManager.cpp" />
     <ClCompile Include="Source\Common\CameraEditor\CameraEditor.cpp" />
     <ClCompile Include="Source\Common\csvReader.cpp" />
+    <ClCompile Include="Source\Common\Effect\effectBase.cpp" />
+    <ClCompile Include="Source\Common\Effect\effectManager.cpp" />
     <ClCompile Include="Source\Common\imageSynthesis.cpp" />
     <ClCompile Include="Source\Common\Input\inputManager.cpp" />
     <ClCompile Include="Source\Common\Object\collision.cpp" />

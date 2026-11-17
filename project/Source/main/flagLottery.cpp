@@ -50,7 +50,6 @@ FlagLottery::FlagLottery()
 	rand = new Random();
 
 
-
 	payMedal[ID::BELL] = 2;
 	payMedal[ID::REPLAY] = 0;
 	payMedal[ID::WATERMELON] = 3;

@@ -10,6 +10,7 @@
 
 Reel::Reel(MainControl* data)
 {
+
 	mainData = data;
 
 	position.x = Screen::WIDTH  / 4 - 15.0f;
@@ -110,6 +111,7 @@ Reel::Reel(MainControl* data)
 	previousStopIndex = -1;
 	orderMissCount = -1;
 
+	hImage = LoadGraph("data/texture/reel.png");
 	GetGraphSize(hImage, nullptr, &reelH);
 
 	reelTable[Reel_ID::LEFT] = new ReelTableBase("data/csv/table/left/%02d.csv");
@@ -124,12 +126,18 @@ Reel::Reel(MainControl* data)
 	OrderMissTable[1] = new ReelTableBase("data/csv/table/order/miss/second/%02d.csv");
 
 	reelCover = LoadGraph("data/texture/reelBuller.png");
+	reelHandle = LoadGraph("data/texture/unmei.png");
+	
 }
 
 Reel::~Reel()
 {
 	delete csv;
 	delete is;
+
+	DeleteGraph(reelH);
+	DeleteGraph(reelCover);
+	DeleteGraph(hImage);
 
 	for (int i = 0; i < Reel_ID::ID_NUM; i++)
 	{
@@ -219,27 +227,46 @@ void Reel::Update()
 
 void Reel::Draw()
 {
+	/*
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 125);
+	SetDrawBlendMode(DX_BLENDMODE_ADD, 30);
+	for (int i = 0; i < 10; i++)
+	{
+		DrawGraph((int)position.x - 400, (int)position.y - 300, reelHandle, true);
+	}
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+	*/
+
+
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 155);
+
+	DrawGraph((int)position.x, (int)position.y, hImage, true);
+	
+
+	
 	//ƒŠ[ƒ‹‚Ì•`‰æ
 	for (int i = 0; i < Reel_ID::ID_NUM; i++)
 	{
 		//‰æ‘œ‚ð­‚µ‘å‚«‚­‚µ‚½‚Ì‚Å
 		//•â³‚É18.0f‚ð’Ç‰Á
-		reelData[i].cell = ((int)reelData[i].scroll % imageH + reelH);
-
-		float shift = 0;
-
-		if (i > 1)
-		{
-			//shift = 11.0f;
-		}
+		reelData[i].cell = ((int)reelData[i].scroll % imageH);
 
 
 
-		DrawRectGraph((int)position.x + (165 * i) + shift, (int)position.y, 0, reelData[i].cell + imageH, 140, SYMBOL_SIZE * 3, reelData[i].symbolListImage, true);
-		DrawRectGraph((int)position.x + (165 * i) + shift, (int)position.y, 0, reelData[i].cell, 140, SYMBOL_SIZE * 3, reelData[i].symbolListImage, true);
+
+		DrawRectGraph((int)position.x + (165 * i), (int)position.y, 0, reelData[i].cell + imageH, 140, SYMBOL_SIZE * 3, reelData[i].symbolListImage, true);
+		DrawRectGraph((int)position.x + (165 * i), (int)position.y, 0, reelData[i].cell, 140, SYMBOL_SIZE * 3, reelData[i].symbolListImage, true);
 
 	}
 
+
+	
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+	
+	
+
+	
 	for (int y = 0; y < Reel_ID::ID_NUM; y++)
 	{
 		for (int x = 0; x < reel[y].size(); x++)

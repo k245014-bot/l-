@@ -102,6 +102,7 @@ private:
 	int	imageH;	//テクスチャの縦幅を取得
 
 	int reelH;
+	int reelHandle;
 
 	bool first;
 

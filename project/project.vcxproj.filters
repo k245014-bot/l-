@@ -134,6 +134,12 @@
     <ClCompile Include="Source\Character\Mao\State\Base\MaoStateBase.cpp">
       <Filter>PlayScene\Character\Mao\State\Base</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Common\Effect\effectManager.cpp">
+      <Filter>Common\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Effect\effectBase.cpp">
+      <Filter>Common\Effect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -294,6 +300,12 @@
     <ClInclude Include="Source\Character\Mao\State\Base\MaoStateBase.h">
       <Filter>PlayScene\Character\Mao\State\Base</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Common\Effect\effectManager.h">
+      <Filter>Common\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Effect\effectBase.h">
+      <Filter>Common\Effect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -364,6 +376,9 @@
     </Filter>
     <Filter Include="PlayScene\Character\Mao\State\Base">
       <UniqueIdentifier>{7c9fc2b0-4606-4a83-bf11-ef8ae2d0fdfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Effect">
+      <UniqueIdentifier>{81d854f3-67b7-49ce-bdd1-9f9a4f1ca355}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

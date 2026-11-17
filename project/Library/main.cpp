@@ -19,7 +19,7 @@
 #include "../ImGui/imgui_impl_dxlib.hpp"
 // EffekseerForDXLib.hをインクルードします。
 //--【Effekseer用追加】--
-//#include <EffekseerForDXLib.h>
+#include <EffekseerForDXLib.h>
 
 #include "../Source/Screen.h"
 
@@ -53,11 +53,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// Effekseerを初期化する。
 	// 引数には画面に表示する最大パーティクル数を設定する。
 	
-	/*if (Effekseer_Init(8000) == -1)
+	if (Effekseer_Init(8000) == -1)
 	{
 		DxLib_End();
 		return -1;
-	}*/
+	}
 
 	// フルスクリーンウインドウの切り替えでリソースが消えるのを防ぐ。
 	// Effekseerを使用する場合は必ず設定する。
@@ -67,11 +67,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// ウインドウとフルスクリーンの切り替えが発生する場合は必ず実行する。
 	// ただし、DirectX11を使用する場合は実行する必要はない。
 	
-	//Effekseer_SetGraphicsDeviceLostCallbackFunctions();
+	Effekseer_SetGraphicsDeviceLostCallbackFunctions();
 
 	// Effekseerに2D描画の設定をする。(2Dのみ)
 	
-	//Effekseer_Set2DSetting(Screen::WIDTH, Screen::HEIGHT);
+	Effekseer_Set2DSetting(Screen::WIDTH, Screen::HEIGHT);
 
 	SetDrawScreen(DX_SCREEN_BACK);
 	SetAlwaysRunFlag(TRUE);
@@ -132,7 +132,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//--【Effekseer用追加】--
 	// Effekseerを終了する。
 	
-	//Effkseer_End();
+	Effkseer_End();
 
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 #ifdef _DEBUG

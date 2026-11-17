@@ -34,7 +34,7 @@ void Mao::Draw()
 
 void Mao::ImGuiDraw()
 {
-	ImGui::Begin("CameraEditor");
+	ImGui::Begin("MaoUIDraw");
 
 	if (ImGui::Button("DanceAnim"))
 		state->ChangeState(stateData.dance);

@@ -6,6 +6,7 @@ Mao::Mao()
 {
 	LoadModel(fileName);
 	data.position = VZero;
+	//data.scale = VGet(0.1f, 0.1f, 0.1f);
 	animation = new AnimationManager(hModel);
 	LoadAnim(animData.dance, "data/model/mao/Motion/Dance.mv1");
 	LoadAnim(animData.attack, "data/model/mao/Motion/Attack.mv1");

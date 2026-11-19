@@ -18,4 +18,7 @@ private:
 	int button = 0;
 	int random = 0;
 	int result = 0;
+	int battleResult = 0;
+	int makon = 0;
+	int stop = 0;
 };

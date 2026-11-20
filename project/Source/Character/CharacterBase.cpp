@@ -28,7 +28,8 @@ void CharacterBase::LoadModel(const std::string& _hModelName)
 
 void CharacterBase::LoadAnim(int& _anim, const std::string& _playAnimName)
 {
-	_anim = MV1LoadModel(_playAnimName.c_str());
+	std::string name = "data/model/" + _playAnimName;
+	_anim = MV1LoadModel(name.c_str());
 }
 
 void CharacterBase::SetAnimation(const int _motionId, const int& _animData, const float& _motionSpeed, const bool& _isMotionLoop)

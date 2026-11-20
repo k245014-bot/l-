@@ -4,7 +4,9 @@
 Stage::Stage()
 {
 	wall = new Wall(VECTOR3(0, 0, 800.0f));
-	hModel = MV1LoadModel("data/model/stage/zimen.mv1");
+	hModel = MV1LoadModel("data/model/stage/test_Map.mv1");
+	data.scale = VECTOR3(60.0f, 60.0f, 60.0f);
+
 	skyModel = MV1LoadModel("data/model/sky/Stage00_sky.mv1");
 	wallModel = MV1LoadModel("data/model/stage/Wall/Wall1.mv1");
 
@@ -33,5 +35,5 @@ void Stage::ObjectDraw()
 		MV1DrawModel(skyModel);
 	}
 
-	wall->ObjectDraw();
+	//wall->ObjectDraw();
 }

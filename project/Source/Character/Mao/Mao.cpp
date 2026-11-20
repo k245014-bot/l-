@@ -6,15 +6,14 @@ Mao::Mao()
 {
 	LoadModel(fileName);
 	data.position = VZero;
-	//data.scale = VGet(0.1f, 0.1f, 0.1f);
-	animation = new AnimationManager(hModel);
-	LoadAnim(animData.dance, "data/model/mao/Motion/Dance.mv1");
-	LoadAnim(animData.attack, "data/model/mao/Motion/Attack.mv1");
+
+	animation			= new AnimationManager(hModel);
+	state				= new StateManager;
+	stateData.dance		= new MaoDanceState();
+	stateData.danceAtk	= new MaoDanceAtkState();
 	
-	state = new StateManager;
-	stateData.dance = new MaoDanceState();
-	stateData.danceAtk = new MaoDanceAtkState();
-	
+	LoadAnim(animData.dance, "mao/Motion/Dance.mv1");
+	LoadAnim(animData.attack, "mao/Motion/Attack.mv1");
 
 	state->ChangeState(stateData.dance);
 }

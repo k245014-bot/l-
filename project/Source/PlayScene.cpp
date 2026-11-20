@@ -47,6 +47,14 @@ void PlayScene::Update()
 		if (cameraEditor == nullptr)
 			cameraEditor = new CameraEditor;
 	}
+	else if (CheckHitKey(KEY_INPUT_LSHIFT) && CheckHitKey(KEY_INPUT_2))
+	{
+		if (cameraEditor != nullptr)
+		{
+			delete cameraEditor;
+			cameraEditor = nullptr;
+		}
+	}
 
 	if (CheckHitKey(KEY_INPUT_ESCAPE))
 	{

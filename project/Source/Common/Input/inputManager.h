@@ -3,30 +3,35 @@
 
 static const int KEYCOOLTIME = 20;
 static const int STICK_MAX = 32767;
-static const int MOUSE_OFFSET_X = 1920 / 2;		//画面の中央座標。マウスの移動量計測に使用
-static const int MOUSE_OFFSET_Y = 1080 / 2;
+static const int MOUSE_OFFSET_X = 872 / 2;
+static const int MOUSE_OFFSET_Y = 1280 / 2;
 static const int RESTAINT = 40;//抑制
 
 struct KeyPush
 {
 public:
-	float sickLX;
-	float sickLY;
+	float stickLX;
+	float stickLY;
 	float sickRX;
 	float sickRY;
 
 	bool isAtk;				//プレイヤーが攻撃キーを押したとき
-	bool isJump;			//プレイヤー1ジャンプキーを推したとき
+	
+	bool isLeftClick;		//左クリック時
+	bool isRightClick;		//右クリック時
+	bool isMouseControlOn;
 
 	KeyPush()
 	{
-		sickLX = 0;
-		sickLY = 0;
+		stickLX = 0;
+		stickLY = 0;
 		sickRX = 0;
 		sickRY = 0;
 
 		isAtk = false;
-		isJump = false;
+		isLeftClick = false;
+		isRightClick = false;
+		isMouseControlOn = false;
 	}
 };
 
@@ -41,8 +46,8 @@ public:
 	KeyPush GetKeyPush() { return isKey; }
 	//セッター
 
-	friend class MoveKeyboard;
 
+	void MouseControlOn();
 private:
 	XINPUT_STATE controller;
 	int mouseX, mouseY;
@@ -64,4 +69,6 @@ private:
 	VECTOR2 max;
 	VECTOR2 mouseCopy;
 	KeyPush isKey;
+
+	bool mouseControlOn;
 };

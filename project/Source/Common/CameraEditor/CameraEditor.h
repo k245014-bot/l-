@@ -18,4 +18,7 @@ private:
 	InputManager* input;
 	void ImGuiDraw();
 	void CameraControl();
+
+	VECTOR3 copyPos;
+	VECTOR3 copyRot;
 };

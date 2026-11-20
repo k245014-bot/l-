@@ -6,6 +6,8 @@ CameraEditor::CameraEditor()
 {
 	camera = FindGameObject<Camera>();
 	input = FindGameObject<InputManager>();
+
+	copyPos = camera->GetTransform().position;
 }
 
 CameraEditor::~CameraEditor()
@@ -15,6 +17,9 @@ CameraEditor::~CameraEditor()
 void CameraEditor::Update()
 {
 	CameraControl();
+
+	camera->SetPosition(copyPos);
+	camera->SetRotation(copyRot);
 }
 
 void CameraEditor::Draw()
@@ -27,32 +32,31 @@ void CameraEditor::ImGuiDraw()
 	ImGui::Begin("CameraEditor");
 	const VECTOR3 Pos = camera->GetTransform().position;
 	const VECTOR3 Rot = camera->GetTransform().rotation;
-	ImGui::Text("CameraPosition: X:%f ,Y:%f , Z:%f", Pos.x, Pos.y, Pos.z);
-	ImGui::Text("CameraRotation: X:%f ,Y:%f , Z:%f", Rot.x, Rot.y, Rot.z);
+	/*ImGui::Text("CameraPosition: X:%f ,Y:%f , Z:%f", Pos.x, Pos.y, Pos.z);
+	ImGui::Text("CameraRotation: X:%f ,Y:%f , Z:%f", Rot.x, Rot.y, Rot.z);*/
+	
+	ImGui::DragFloat("PositionX", &copyPos.x, 3.0f, -100000.0f, 100000.0f, "%.2f");
+	ImGui::DragFloat("PositionY", &copyPos.y, 3.0f, -100000.0f, 100000.0f, "%.2f");
+	ImGui::DragFloat("PositionZ", &copyPos.z, 3.0f, -100000.0f, 100000.0f, "%.2f");
 
-	/*
-	if (ImGui::Button("enemySpwn"))
-		CreateEnemy(VZero, 1, 0);
-	if (ImGui::Button("ack1"))
-		Cooperate();
-	if (ImGui::Button("ack2"))
-	{
-		startRangedAtk = true;
-		enemyGroup->RangedDebugAtk();
-	}
-	if (ImGui::Button("DeadMeleeEnemy"))
-		enemyGroup->DeadMeleeEnemy();
-	if (ImGui::Button("DeadRangedReader"))
-		enemyGroup->DeadRangedEnemy(true);
-	if (ImGui::Button("DeadRanged"))
-		enemyGroup->DeadRangedEnemy(false);
-	*/
+	ImGui::DragFloat("RotionX", &copyRot.x, 0.005f, -180.0f, 180.0f, "%.2f");
+	ImGui::DragFloat("RotionY", &copyRot.y, 0.005f, -180.0f, 180.0f, "%.2f");
+	//ImGui::DragFloat("RotionZ", &copyRot.z, 0.05f, -10000.0f, 10000.0f, "%.2f");
+
 	ImGui::End();
 }
 
 void CameraEditor::CameraControl()
 {
-	//if (input->GetKeyPush().sickLY)
-	camera->NormalMove(-input->GetKeyPush().sickLY);
-	camera->Move(VECTOR3(1, 0, 0), input->GetKeyPush().sickLX);
+	auto rotation = camera->GetTransform().rotation;
+
+	if (input->GetKeyPush().isLeftClick)
+	{
+		MATRIX rot = MGetRotY(rotation.y);
+
+		VECTOR3 right = VTransform(VECTOR3(1, 0, 0), rot);
+
+		copyPos -= right * input->GetKeyPush().sickRX * 10;
+		copyPos += VECTOR3(0, 1, 0) * input->GetKeyPush().sickRY * 10;
+	}
 }

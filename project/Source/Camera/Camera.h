@@ -15,8 +15,9 @@ public:
 	void Set(Mao* _mao);
 	void CameraMove();
 	void NormalMove(float _speed);
-	void Move(VECTOR3 _vector, float _speed);
-
+	void Move(const VECTOR3& _vector, const float& _speed);
+	void SetPosition(const VECTOR3& _pos);
+	void SetRotation(const VECTOR3& _rot) { data.rotation = _rot; }
 private:
 	Mao* mao;
 	//ÉJÉÅÉâÇÃà íuí≤êÆ

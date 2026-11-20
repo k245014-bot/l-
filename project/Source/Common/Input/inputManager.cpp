@@ -20,7 +20,8 @@ InputManager::InputManager()
 	max = VECTOR2(MOUSE_OFFSET_X * 2 - 1, MOUSE_OFFSET_Y * 2);
 
 	mouseCopy = VECTOR2(MOUSE_OFFSET_X, MOUSE_OFFSET_Y);
-	SetMouseDispFlag(FALSE);
+
+	mouseControlOn = false;
 }
 
 InputManager::~InputManager()
@@ -43,8 +44,8 @@ void InputManager::ControllerMove()
 	VECTOR3 InVecL = Normalize(VECTOR3(controller.ThumbLX, controller.ThumbLY, 0));
 	VECTOR3 InVecR = Normalize(VECTOR3(controller.ThumbRX, controller.ThumbRY, 0));
 
-	isKey.sickLX = InVecL.x;
-	isKey.sickLY = InVecL.y;
+	isKey.stickLX = InVecL.x;
+	isKey.stickLY = InVecL.y;
 	isKey.sickRX = InVecR.x;
 	isKey.sickRY = InVecR.y;
 
@@ -52,30 +53,44 @@ void InputManager::ControllerMove()
 		isKey.isAtk = CheckKey();
 	else
 		isKey.isAtk = KeyCoolTime();
+}
 
-	if (controller.Buttons[XINPUT_BUTTON_A] && !isCheckkey)
-		isKey.isJump = CheckKey();
+void InputManager::MouseControlOn()
+{
+	if(!mouseControlOn)
+		mouseControlOn = true;
 	else
-		isKey.isJump = KeyCoolTime();
+		mouseControlOn = false;
+
+	isCheckkey = false;
 }
 
 void InputManager::KeyBoardMove()//updata
 {
 	//上下移動
 	if (CheckHitKey(KEY_INPUT_W))
-		isKey.sickLY = 1;
+		isKey.stickLY = 1;
 	else if (CheckHitKey(KEY_INPUT_S))
-		isKey.sickLY = -1;
+		isKey.stickLY = -1;
 	else
-		isKey.sickLY = 0;
+		isKey.stickLY = 0;
 
 	//左右移動
 	if (CheckHitKey(KEY_INPUT_D))
-		isKey.sickLX = 1;
+		isKey.stickLX = 1;
 	else if (CheckHitKey(KEY_INPUT_A))
-		isKey.sickLX = -1;
+		isKey.stickLX = -1;
 	else
-		isKey.sickLX = 0;
+		isKey.stickLX = 0;
+
+	if (CheckHitKey(KEY_INPUT_P) != 0)
+	{
+		if (!isCheckkey)
+			return;
+		MouseControlOn();
+	}
+	else
+		isCheckkey = true;
 
 	// マウスポインタの位置を取得する
 	GetMousePoint(&mouseX, &mouseY);
@@ -84,14 +99,21 @@ void InputManager::KeyBoardMove()//updata
 	mouseMoveX = mouseX - (int)mouseCopy.x;
 	mouseMoveY = mouseY - (int)mouseCopy.y;
 
-	// マウスポインタの位置を画面中央に設定する
-	/*if (mouseX <= (int)min.x || mouseX >= (int)max.x || mouseY <= (int)min.y || mouseY >= (int)max.y)
+	if (mouseControlOn)
 	{
-		SetMousePoint(MOUSE_OFFSET_X, MOUSE_OFFSET_Y);
-		mouseCopy = VECTOR2(MOUSE_OFFSET_X, MOUSE_OFFSET_Y);
+		SetMouseDispFlag(false);
+
+		 //マウスポインタの位置を画面中央に設定する
+		if (mouseX <= (int)min.x || mouseX >= (int)max.x || mouseY <= (int)min.y || mouseY >= (int)max.y)
+		{
+			SetMousePoint(MOUSE_OFFSET_X, MOUSE_OFFSET_Y);
+			mouseCopy = VECTOR2(MOUSE_OFFSET_X, MOUSE_OFFSET_Y);
+		}
+		else
+			mouseCopy = VECTOR2((float)mouseX, (float)mouseY);
 	}
 	else
-		mouseCopy = VECTOR2((float)mouseX, (float)mouseY);*/
+		SetMouseDispFlag(true);
 
 	//マウスの移動量を格納する。そのまま入れるとハイセンシ(感度が良）すぎるので割った数値を入れる
 	isKey.sickRX = (float)mouseMoveX / restraint;
@@ -102,11 +124,18 @@ void InputManager::KeyBoardMove()//updata
 		isKey.isAtk = CheckKey();
 	else
 		isKey.isAtk = KeyCoolTime();
-	//ジャンプボタン
-	if(CheckHitKey(KEY_INPUT_SPACE))
-		isKey.isJump = CheckKey();
+
+	//左クリックの判定
+	if ((GetMouseInput() & MOUSE_INPUT_LEFT) && mouseControlOn)
+		isKey.isLeftClick = true;
 	else
-		isKey.isJump = KeyCoolTime();
+		isKey.isLeftClick = false;
+
+	//右クリックの判定
+	if ((GetMouseInput() & MOUSE_INPUT_RIGHT) && mouseControlOn)
+		isKey.isRightClick = true;
+	else
+		isKey.isRightClick = false;
 }
 
 bool InputManager::CheckKey()

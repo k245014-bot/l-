@@ -74,7 +74,7 @@ Reel::Reel(MainControl* data)
 	symbolHandle.emplace(5, LoadGraph("data/texture/macon.png"));
 	symbolHandle.emplace(6, LoadGraph("data/texture/bar_3.png"));
 	symbolHandle.emplace(7, LoadGraph("data/texture/red_7.png"));
-	symbolHandle.emplace(8, LoadGraph("data/texture/maseki.png"));
+	symbolHandle.emplace(8, LoadGraph("data/texture/bar_2.png"));
 
 	//‡‚í‚¹‚½‰æ‘œ‚Ìƒnƒ“ƒhƒ‰
 	reelData[Reel_ID::LEFT].symbolListImage = is->Create(line, symbol, symbolHandle, 1, SYMBOL_SIZE);
@@ -111,7 +111,7 @@ Reel::Reel(MainControl* data)
 	previousStopIndex = -1;
 	orderMissCount = -1;
 
-	hImage = LoadGraph("data/texture/reel.png");
+	hImage = LoadGraph("data/texture/reel2.png");
 	GetGraphSize(hImage, nullptr, &reelH);
 
 	reelTable[Reel_ID::LEFT] = new ReelTableBase("data/csv/table/left/%02d.csv");

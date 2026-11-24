@@ -104,9 +104,6 @@
     <ClCompile Include="Source\Common\Object\objectBase.cpp">
       <Filter>Common\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Common\csvReader.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Common\imageSynthesis.cpp">
       <Filter>Common</Filter>
     </ClCompile>
@@ -139,6 +136,12 @@
     </ClCompile>
     <ClCompile Include="Source\Common\Effect\effectBase.cpp">
       <Filter>Common\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Video\videoManager.cpp">
+      <Filter>Common\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\csvReader.cpp">
+      <Filter>Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -306,6 +309,9 @@
     <ClInclude Include="Source\Common\Effect\effectBase.h">
       <Filter>Common\Effect</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Common\Video\videoManager.h">
+      <Filter>Common\Video</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -379,6 +385,9 @@
     </Filter>
     <Filter Include="Common\Effect">
       <UniqueIdentifier>{81d854f3-67b7-49ce-bdd1-9f9a4f1ca355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Video">
+      <UniqueIdentifier>{33b757df-cad1-43eb-8558-1404a5a83803}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

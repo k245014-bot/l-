@@ -7,7 +7,7 @@ Stage::Stage()
 	hModel = MV1LoadModel("data/model/stage/test_Map.mv1");
 	data.scale = VECTOR3(60.0f, 60.0f, 60.0f);
 
-	skyModel = MV1LoadModel("data/model/sky/Stage00_sky.mv1");
+	//skyModel = MV1LoadModel("data/model/sky/Stage00_sky.mv1");
 	wallModel = MV1LoadModel("data/model/stage/Wall/Wall1.mv1");
 
 	wallPosition = VZero;
@@ -29,11 +29,11 @@ void Stage::Draw()
 void Stage::ObjectDraw()
 {
 	Object3D::ObjectDraw();
-	if (skyModel > 0)
+	/*if (skyModel > 0)
 	{
 		MV1SetMatrix(skyModel, Matrix());
 		MV1DrawModel(skyModel);
-	}
+	}*/
 
-	//wall->ObjectDraw();
+	wall->ObjectDraw();
 }

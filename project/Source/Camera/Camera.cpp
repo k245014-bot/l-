@@ -6,6 +6,7 @@ Camera::Camera()
 	mao = nullptr/*FindGameObject<Mao>()*/;
 
 	data.position = CAMERA_OFFSET;
+	SetCameraNearFar(10.0f, 10000.0f);
 }
 
 Camera::~Camera()

@@ -5,7 +5,8 @@
 Mao::Mao()
 {
 	LoadModel(fileName);
-	data.position = VZero;
+	data.position = VECTOR3(0,90,-6000);
+	data.scale = VECTOR3(1.3f, 1.3f, 1.3f);
 
 	animation			= new AnimationManager(hModel);
 	state				= new StateManager;
@@ -36,6 +37,8 @@ void Mao::ImGuiDraw()
 {
 	ImGui::Begin("MaoUIDraw");
 
+	if (ImGui::Button("Idel"))
+		animation->Play(100, animData.idle, 20.0f, true);
 	if (ImGui::Button("DanceAnim"))
 		state->ChangeState(stateData.dance);
 	if (ImGui::Button("AtkAnim"))

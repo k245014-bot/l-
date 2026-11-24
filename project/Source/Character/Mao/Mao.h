@@ -24,6 +24,7 @@ private:
 	StateData stateData;
 	struct AnimationData
 	{
+		int idle;
 		int dance;
 		int attack;
 	};

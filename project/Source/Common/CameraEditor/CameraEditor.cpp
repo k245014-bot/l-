@@ -41,7 +41,6 @@ void CameraEditor::ImGuiDraw()
 
 	ImGui::DragFloat("RotionX", &copyRot.x, 0.005f, -180.0f, 180.0f, "%.2f");
 	ImGui::DragFloat("RotionY", &copyRot.y, 0.005f, -180.0f, 180.0f, "%.2f");
-	//ImGui::DragFloat("RotionZ", &copyRot.z, 0.05f, -10000.0f, 10000.0f, "%.2f");
 
 	ImGui::End();
 }

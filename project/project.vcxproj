@@ -159,6 +159,8 @@
     <ClInclude Include="Source\BootScene.h" />
     <ClInclude Include="Source\Camera\Camera.h" />
     <ClInclude Include="Source\Character\CharacterBase.h" />
+    <ClInclude Include="Source\Character\Enemy\Enemy.h" />
+    <ClInclude Include="Source\Character\Enemy\EnemyManager.h" />
     <ClInclude Include="Source\Character\Mao\Mao.h" />
     <ClInclude Include="Source\Character\Mao\MaoStateData.h" />
     <ClInclude Include="Source\Character\Mao\State\Base\MaoStateBase.h" />
@@ -213,6 +215,8 @@
     <ClCompile Include="Source\BootScene.cpp" />
     <ClCompile Include="Source\Camera\Camera.cpp" />
     <ClCompile Include="Source\Character\CharacterBase.cpp" />
+    <ClCompile Include="Source\Character\Enemy\Enemy.cpp" />
+    <ClCompile Include="Source\Character\Enemy\EnemyManager.cpp" />
     <ClCompile Include="Source\Character\Mao\Mao.cpp" />
     <ClCompile Include="Source\Character\Mao\State\Base\MaoStateBase.cpp" />
     <ClCompile Include="Source\Character\Mao\State\MaoDanceAtkState.cpp" />

@@ -1,8 +1,10 @@
 #pragma once
 #include "../../../Common/Object/object3D.h"
+
 class Camera;
 class Mao;
 class Stage;
+class EnemyManager;
 
 class ScreenManager :Object3D
 {
@@ -18,6 +20,7 @@ private:
 	Camera* camera;
 	Mao* mao;
 	Stage* stage;
+	EnemyManager* enemy;
 
 	void DrawObjects();
 	int m_3DTarget;

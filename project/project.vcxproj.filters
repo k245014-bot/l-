@@ -140,6 +140,12 @@
     <ClCompile Include="Source\Common\Effect\effectBase.cpp">
       <Filter>Common\Effect</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Character\Enemy\EnemyManager.cpp">
+      <Filter>PlayScene\Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Character\Enemy\Enemy.cpp">
+      <Filter>PlayScene\Character\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -306,6 +312,12 @@
     <ClInclude Include="Source\Common\Effect\effectBase.h">
       <Filter>Common\Effect</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Character\Enemy\EnemyManager.h">
+      <Filter>PlayScene\Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Character\Enemy\Enemy.h">
+      <Filter>PlayScene\Character\Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
@@ -379,6 +391,9 @@
     </Filter>
     <Filter Include="Common\Effect">
       <UniqueIdentifier>{81d854f3-67b7-49ce-bdd1-9f9a4f1ca355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayScene\Character\Enemy">
+      <UniqueIdentifier>{418dca50-75b7-4d0a-b8f5-166391325638}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

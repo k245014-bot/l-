@@ -2,12 +2,14 @@
 #include "../../../Camera/Camera.h"
 #include "../../../Character/Mao/Mao.h"
 #include "../../../Stage/Stage.h"
+#include "../../../Character/Enemy/EnemyManager.h"
 
 ScreenManager::ScreenManager()
 {
 	camera = new Camera;
     mao = FindGameObject<Mao>();
     stage = FindGameObject<Stage>();
+	enemy = new EnemyManager();
     camera->Set(mao);
     m_3DTarget = MakeScreen(660 , 560, TRUE);
 }
@@ -51,5 +53,7 @@ void ScreenManager::CameraDrawScreen()
 void ScreenManager::DrawObjects()
 {
     mao->ObjectDraw();
+	enemy->ObjectDraw();
     stage->ObjectDraw();
+
 }

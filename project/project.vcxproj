@@ -251,6 +251,7 @@
     <MASM Include="Source\main\flagSymbol.asm" />
     <MASM Include="Source\main\makonLottery.asm" />
     <MASM Include="Source\main\payout.asm" />
+    <MASM Include="Source\main\random.asm" />
     <MASM Include="Source\main\slotInput.asm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

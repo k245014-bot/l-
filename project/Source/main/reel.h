@@ -122,6 +122,9 @@ private:
 	//‰½”Ô–Ú‚Ì‰Ÿ‚µ‡‚ÅŠÔˆá‚¦‚½‚©
 	int orderMissCount;
 
+	bool reelDelete;
+	bool prevDelete;
+
 	void Reset();
 	void Speen(int index);
 	void Stop(int index);

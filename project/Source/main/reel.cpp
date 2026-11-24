@@ -111,6 +111,9 @@ Reel::Reel(MainControl* data)
 	previousStopIndex = -1;
 	orderMissCount = -1;
 
+	reelDelete = true;
+	prevDelete = false;
+
 	hImage = LoadGraph("data/texture/reel2.png");
 	GetGraphSize(hImage, nullptr, &reelH);
 
@@ -223,6 +226,17 @@ void Reel::Update()
 	}
 
 	Scroll();
+
+	bool pdelete = CheckHitKey(KEY_INPUT_R);
+	
+	if (pdelete && !prevDelete)
+	{
+		reelDelete = !reelDelete;
+	}
+
+	prevDelete = pdelete;
+
+
 }
 
 void Reel::Draw()
@@ -237,34 +251,35 @@ void Reel::Draw()
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 	*/
-
-
-	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 155);
-
-	DrawGraph((int)position.x, (int)position.y, hImage, true);
-	
-
-	
-	//ÉäÅ[ÉãÇÃï`âÊ
-	for (int i = 0; i < Reel_ID::ID_NUM; i++)
+	if (!reelDelete)
 	{
-		//âÊëúÇè≠ÇµëÂÇ´Ç≠ÇµÇΩÇÃÇ≈
-		//ï‚ê≥Ç…18.0fÇí«â¡
-		reelData[i].cell = ((int)reelData[i].scroll % imageH);
+
+		//SetDrawBlendMode(DX_BLENDMODE_ALPHA, 155);
+
+		DrawGraph((int)position.x, (int)position.y, hImage, true);
+
+
+
+		//ÉäÅ[ÉãÇÃï`âÊ
+		for (int i = 0; i < Reel_ID::ID_NUM; i++)
+		{
+			//âÊëúÇè≠ÇµëÂÇ´Ç≠ÇµÇΩÇÃÇ≈
+			//ï‚ê≥Ç…18.0fÇí«â¡
+			reelData[i].cell = ((int)reelData[i].scroll % imageH);
 
 
 
 
-		DrawRectGraph((int)position.x + (165 * i), (int)position.y, 0, reelData[i].cell + imageH, 140, SYMBOL_SIZE * 3, reelData[i].symbolListImage, true);
-		DrawRectGraph((int)position.x + (165 * i), (int)position.y, 0, reelData[i].cell, 140, SYMBOL_SIZE * 3, reelData[i].symbolListImage, true);
+			DrawRectGraph((int)position.x + (165 * i), (int)position.y, 0, reelData[i].cell + imageH, 140, SYMBOL_SIZE * 3, reelData[i].symbolListImage, true);
+			DrawRectGraph((int)position.x + (165 * i), (int)position.y, 0, reelData[i].cell, 140, SYMBOL_SIZE * 3, reelData[i].symbolListImage, true);
+
+		}
+
+
+
+		//SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 
 	}
-
-
-	
-	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
-	
-	
 
 	
 	for (int y = 0; y < Reel_ID::ID_NUM; y++)

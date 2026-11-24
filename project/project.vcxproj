@@ -183,6 +183,7 @@
     <ClInclude Include="Source\Common\SoundManager.h" />
     <ClInclude Include="Source\Common\StateBase.h" />
     <ClInclude Include="Source\Common\Transform.h" />
+    <ClInclude Include="Source\Common\Video\videoManager.h" />
     <ClInclude Include="Source\main\creditMedal.h" />
     <ClInclude Include="Source\main\flagLottery.h" />
     <ClInclude Include="Source\main\mainControl.h" />
@@ -235,6 +236,7 @@
     <ClCompile Include="Source\Common\Object\objectBase.cpp" />
     <ClCompile Include="Source\Common\SoundManager.cpp" />
     <ClCompile Include="Source\Common\Transform.cpp" />
+    <ClCompile Include="Source\Common\Video\videoManager.cpp" />
     <ClCompile Include="Source\main\creditMedal.cpp" />
     <ClCompile Include="Source\main\flagLottery.cpp" />
     <ClCompile Include="Source\main\mainControl.cpp" />
@@ -253,6 +255,7 @@
     <MASM Include="Source\main\flagSymbol.asm" />
     <MASM Include="Source\main\makonLottery.asm" />
     <MASM Include="Source\main\payout.asm" />
+    <MASM Include="Source\main\random.asm" />
     <MASM Include="Source\main\slotInput.asm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

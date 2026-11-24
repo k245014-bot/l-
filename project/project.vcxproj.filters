@@ -104,9 +104,6 @@
     <ClCompile Include="Source\Common\Object\objectBase.cpp">
       <Filter>Common\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Common\csvReader.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Common\imageSynthesis.cpp">
       <Filter>Common</Filter>
     </ClCompile>
@@ -140,10 +137,16 @@
     <ClCompile Include="Source\Common\Effect\effectBase.cpp">
       <Filter>Common\Effect</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Character\Enemy\EnemyManager.cpp">
-      <Filter>PlayScene\Character\Enemy</Filter>
+    <ClCompile Include="Source\Common\Video\videoManager.cpp">
+      <Filter>Common\Video</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\csvReader.cpp">
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="Source\Character\Enemy\Enemy.cpp">
+      <Filter>PlayScene\Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Character\Enemy\EnemyManager.cpp">
       <Filter>PlayScene\Character\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
@@ -312,10 +315,13 @@
     <ClInclude Include="Source\Common\Effect\effectBase.h">
       <Filter>Common\Effect</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Character\Enemy\EnemyManager.h">
-      <Filter>PlayScene\Character\Enemy</Filter>
+    <ClInclude Include="Source\Common\Video\videoManager.h">
+      <Filter>Common\Video</Filter>
     </ClInclude>
     <ClInclude Include="Source\Character\Enemy\Enemy.h">
+      <Filter>PlayScene\Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Character\Enemy\EnemyManager.h">
       <Filter>PlayScene\Character\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
@@ -392,8 +398,11 @@
     <Filter Include="Common\Effect">
       <UniqueIdentifier>{81d854f3-67b7-49ce-bdd1-9f9a4f1ca355}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\Video">
+      <UniqueIdentifier>{33b757df-cad1-43eb-8558-1404a5a83803}</UniqueIdentifier>
+    </Filter>
     <Filter Include="PlayScene\Character\Enemy">
-      <UniqueIdentifier>{418dca50-75b7-4d0a-b8f5-166391325638}</UniqueIdentifier>
+      <UniqueIdentifier>{8cd90010-8018-461d-8d83-2f4bff93693e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -407,6 +416,9 @@
       <Filter>PlayScene\main</Filter>
     </MASM>
     <MASM Include="Source\main\makonLottery.asm">
+      <Filter>PlayScene\main</Filter>
+    </MASM>
+    <MASM Include="Source\main\random.asm">
       <Filter>PlayScene\main</Filter>
     </MASM>
   </ItemGroup>

@@ -196,7 +196,12 @@ void MainControl::StartUpdate()
 
 		//ƒƒ_ƒ‹‚ð“Š“ü
 		//ƒŠƒvƒŒƒC‚Ìê‡‚Í–³Ž‹
-		if (flag->GetPrevHit(flag->REPLAY) == false)
+		bool isReplay =
+			flag->GetPrevHit(FlagLottery::REPLAYA) ||
+			flag->GetPrevHit(FlagLottery::REPLAYB) ||
+			flag->GetPrevHit(FlagLottery::REPLAYC) ||
+			flag->GetPrevHit(FlagLottery::REPLAYD);
+		if (!isReplay == false)
 		{
 			medal->BetMedal(BET_MAX);
 		}

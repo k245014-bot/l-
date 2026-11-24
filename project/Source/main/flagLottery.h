@@ -1,31 +1,35 @@
 #pragma once
 #include "../Common/Object/objectBase.h"
-#include "../Common/randomInput.h"
+//#include "../Common/randomInput.h"
 #include <map>
 #include <iostream>
-
-namespace
+extern "C"
 {
-	static const int MAX_RAND = 65536;
-
-	//小役確率
-	static const float BELLA_RAND = MAX_RAND / 8.2f;			//右下がりベル
-
-	static const float REPLAY_RAND = MAX_RAND / 8.7f;				//リプレイ
-	static const float CHANCE_REPLAY_RAND = MAX_RAND / 198.6f;		//チャンスリプレイ(勝舞揃い)
-
-	static const float CHANCE_RAND = MAX_RAND / 199.2f;				//チャンス目
-	static const float CHERRY_WEAK_RAND	= MAX_RAND / 199.2f;		//弱チェリーA
-	static const float CHERRY_STRONG_RAND	= MAX_RAND / 397.2f;	//強チェリーA
-	
-	static const float WATERMELON_RAND = MAX_RAND / 79.9f;			//スイカ
-	
-	static const float BELL_ORDER_RAND = MAX_RAND / 5.58f;			//押し順ベル
-
-	
+	int FlagSymbol();
 }
 
-class Random;
+//namespace
+//{
+//	static const int MAX_RAND = 65536;
+//
+//	//小役確率
+//	static const float BELLA_RAND = MAX_RAND / 8.2f;			//右下がりベル
+//
+//	static const float REPLAY_RAND = MAX_RAND / 8.7f;				//リプレイ
+//	static const float CHANCE_REPLAY_RAND = MAX_RAND / 198.6f;		//チャンスリプレイ(勝舞揃い)
+//
+//	static const float CHANCE_RAND = MAX_RAND / 199.2f;				//チャンス目
+//	static const float CHERRY_WEAK_RAND	= MAX_RAND / 199.2f;		//弱チェリーA
+//	static const float CHERRY_STRONG_RAND	= MAX_RAND / 397.2f;	//強チェリーA
+//	
+//	static const float WATERMELON_RAND = MAX_RAND / 79.9f;			//スイカ
+//	
+//	static const float BELL_ORDER_RAND = MAX_RAND / 5.58f;			//押し順ベル
+//
+//	
+//}
+
+//class Random;
 
 class FlagLottery :public ObjectBase
 {
@@ -41,70 +45,77 @@ public:
 
 	enum ID
 	{
-		BELL = 1,			//ベル
-		REPLAY = 2,			//リプレイ
-		WATERMELON = 3,		//スイカ
-		CHERRY_A_WEAK = 4,	//弱チェリーA
-		CHERRY_B_WEAK = 5,	//弱チェリーB
-		CHERRY_A_STRONG = 6,//強チェリーA
-		CHERRY_B_STRONG = 7,//強チェリーB
-		CHANCE = 8,			//チャンス目A
-		CHANCE_REPLAY = 9,		//チャンスリプレイ(勝舞揃い)
+		HAZURE = 0,
+		BELLA = 1,			//ベル
+		BELLB = 2,
+		BELLC = 3,
+		BELLD = 4,
+		REPLAYA = 5,			//リプレイ
+		REPLAYB = 6,
+		REPLAYC = 7,
+		REPLAYD = 8,
+		WATERMELON = 9,		//スイカ
+		CHERRY_A_WEAK = 10,	//弱チェリーA
+		CHERRY_B_WEAK = 11,	//弱チェリーB
+		CHERRY_A_STRONG = 12,//強チェリーA
+		CHERRY_B_STRONG = 13,//強チェリーB
+		CHANCE = 14,			//チャンス目A
+		CHANCE_REPLAY = 15,		//チャンスリプレイ(勝舞揃い)
 
-		BELL_ORDER_A = 10, //押し順ベル(中,右,左)
-		BELL_ORDER_B = 11, //押し順ベル(中,左,右)
-		BELL_ORDER_C = 12, //押し順ベル(右,中,左)
-		BELL_ORDER_D = 13, //押し順ベル(右,左,中)
+		BELL_ORDER_A = 16, //押し順ベル(中,右,左)
+		BELL_ORDER_B = 17, //押し順ベル(中,左,右)
+		BELL_ORDER_C = 18, //押し順ベル(右,中,左)
+		BELL_ORDER_D = 19, //押し順ベル(右,左,中)
 
 
-		SYMBOL_MAX
+		SYMBOL_MAX = 20
 	};
 
 	const int GetPayMedal(const int& index);
 	const int GetSymbol();
 	const bool GetHit(const int& index) const { return hit == index; }
 	const bool GetPrevHit(const int& index) const { return prevHit == index; }
-	const bool GetHit() const { return (hit != 0); }
+	const bool GetHit() const { return (hit != HAZURE); }
 
 private:
 
-	enum  Rand_ID
-	{
+	//enum  Rand_ID
+	//{
 
-		R_CHERRY_A_STRONG = 1,	//強チェリーA
-		R_CHERRY_B_STRONG = 2,	//強チェリーB
-		R_CHERRY_A_WEAK = 3,	//弱チェリーA
-		R_CHERRY_B_WEAK = 4,	//弱チェリーB
-		R_CHANCE = 5,			//チャンス目
-		R_CHANCE_REPLAY = 6,	//チャンスリプレイ(勝舞揃い)
-		R_WATERMELON = 7,  //スイカ
-		R_REPLAY = 8,	//リプレイ
-		R_BELL = 9,	//ベル
+	//	R_CHERRY_A_STRONG = 1,	//強チェリーA
+	//	R_CHERRY_B_STRONG = 2,	//強チェリーB
+	//	R_CHERRY_A_WEAK = 3,	//弱チェリーA
+	//	R_CHERRY_B_WEAK = 4,	//弱チェリーB
+	//	R_CHANCE = 5,			//チャンス目
+	//	R_CHANCE_REPLAY = 6,	//チャンスリプレイ(勝舞揃い)
+	//	R_WATERMELON = 7,  //スイカ
+	//	R_REPLAY = 8,	//リプレイ
+	//	R_BELL = 9,	//ベル
 
-		R_BELL_ORDER_A = 14, //押し順ベル(中,右,左)
-		R_BELL_ORDER_B = 15, //押し順ベル(中,左,右)
-		R_BELL_ORDER_C = 16, //押し順ベル(右,中,左)
-		R_BELL_ORDER_D = 17, //押し順ベル(右,左,中)
+	//	R_BELL_ORDER_A = 14, //押し順ベル(中,右,左)
+	//	R_BELL_ORDER_B = 15, //押し順ベル(中,左,右)
+	//	R_BELL_ORDER_C = 16, //押し順ベル(右,中,左)
+	//	R_BELL_ORDER_D = 17, //押し順ベル(右,左,中)
 
 
-		R_SYMBOL_MAX
-	};
+	//	R_SYMBOL_MAX
+	//};
 
 
 
 	int hit, prevHit;
 
-	float mainRand;
+	//float mainRand;
 
-	std::map<Rand_ID, int> priority;
+	/*std::map<Rand_ID, int> priority;
 
-	std::map<Rand_ID, ID> hitSymbol;
+	std::map<Rand_ID, ID> hitSymbol;*/
 
-	int ratio;
+	//int ratio;
 
 	//各小役の払い出し枚数
 	int payMedal[ID::SYMBOL_MAX];
 
-	Random* rand;
+	//Random* rand;
 
 };
